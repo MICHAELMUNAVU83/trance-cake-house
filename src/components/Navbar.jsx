@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import {logos} from "../cakedatabase"
 function Navbar() {
-  const [isOpen , setIsOpen] = useState(false)
+  
   return (
     <nav>
-      <span className="nav-logo">Didis house</span>
-      <div className={`nav-items ${isOpen && "open"}`}>
+      
+     
+     
         <Link to="/">Home</Link>
         <Link to="/order">Order</Link>
+        <img className="logo-image" src={logos[0]} alt="u" />
         <Link to="/saved">Saved</Link>
         <Link to="/about">About</Link>
-      </div>
-      <div className={`nav-toggle ${isOpen && "open"}`}>
-        <div className="bar" onClick={()=>setIsOpen(!isOpen)}></div>
-      </div>
+      
     </nav>
   );
 }
