@@ -11,7 +11,7 @@ function Order() {
     </div>
   ))
   return (
-    <div>Order
+    <div>Click on the cake you would love to order
        <div className="all-cakes-home-div">
       {displayCakesHome}
 

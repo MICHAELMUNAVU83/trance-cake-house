@@ -1,7 +1,7 @@
 
 
 .logo-image{
-height:150%;
+height:100%;
 }
 nav{
   display: flex;
@@ -13,7 +13,7 @@ nav{
 nav > a{
   margin-right: 4%;
   margin-left: 4%;
-  margin-top: 5%;
+  margin-top: 2%;
   font-size: 30px;
   text-decoration: none;
   color: #dc3d39;
@@ -47,4 +47,20 @@ nav > a{
   color: red;
   justify-content: center;
   font-size: 2rem;
+}
+li{
+  text-decoration: none;
+  list-style: none;
+}
+.order-details-div{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.order-details-div > div{
+ margin-left: 10%;
+ margin-right: 10%;
+}
+.ordered-cake-image{
+  height: 10rem;
 }
