@@ -2,7 +2,12 @@ import React from 'react'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <div className="quote-div">
+        <p>For goodness sake, eat some cake!</p>
+        <p></p>
+      </div>
+    </div>
   )
 }
 

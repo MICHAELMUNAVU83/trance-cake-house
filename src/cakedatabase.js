@@ -5,6 +5,7 @@ import black_forest1 from "./images/black_forest1.jpeg";
 import black_forest2 from "./images/black_forest2.jpeg";
 import carrot1 from "./images/carrot1.jpeg";
 import carrot2 from "./images/carrot2.jpeg";
+import chocolate_oreo from "./images/chocolate_oreo.jpeg";
 import choc_mint from "./images/choc_mint.jpeg";
 import choc_mint_oreo from "./images/choc_mint_oreo.jpeg";
 import chocolate from "./images/chocolate.jpeg";
@@ -24,7 +25,6 @@ import extra11 from "./images/extra11.jpeg";
 import extra12 from "./images/extra12.jpeg";
 import extra13 from "./images/extra13.jpeg";
 import extra14 from "./images/extra14.jpeg";
-import extra15 from "./images/extra15.jpeg";
 import extra16 from "./images/extra16.jpeg";
 import extra17 from "./images/extra17.jpeg";
 import extra18 from "./images/extra18.jpeg";
@@ -49,7 +49,7 @@ import white_forest1 from "./images/white_forest1.jpeg";
 import white_forest2 from "./images/white_forest2.jpeg";
 import white_forest3 from "./images/white_forest3.jpeg";
 
-const cakes = [
+export const cakes = [
   {
     id: 1,
     name: "Vanilla",
@@ -375,7 +375,7 @@ const cakes = [
     milk: true,
   },
 ];
-const extra_images = [
+export const extra_images = [
   extra1,
   extra2,
   extra3,
@@ -391,7 +391,6 @@ const extra_images = [
   extra12,
   extra13,
   extra14,
-  extra15,
   extra16,
   extra17,
   extra18,
@@ -400,5 +399,5 @@ const extra_images = [
   extra21,
   extra22,
 ];
-const logos = [logo1];
-const background_images = [background1, background2, background3];
+export const logos = [logo1];
+export const background_images = [background1, background2, background3];
