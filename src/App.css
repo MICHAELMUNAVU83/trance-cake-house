@@ -1,3 +1,5 @@
+
+
 .logo-image{
 height:150%;
 }
@@ -16,4 +18,33 @@ nav > a{
   text-decoration: none;
   color: #dc3d39;
   
+}
+.all-cakes-home-div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.each-cake-div{
+  background: #F0A8C6;
+  border: 2px dotted #F0A8C6 ;
+  width: 22rem;
+  padding-bottom: 0.5rem;
+  margin: 2%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+}
+
+.each-cake-div .each-cake-image{
+  height: 20rem;
+  width: 22rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.each-cake-div .each-cake-name{
+  display: flex;
+  color: red;
+  justify-content: center;
+  font-size: 2rem;
 }

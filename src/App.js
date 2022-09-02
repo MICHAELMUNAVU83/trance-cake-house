@@ -1,6 +1,7 @@
 import "./App.css";
 import Home from "./pages/Home";
 import Order from "./pages/Order";
+import OrderDetails from "./pages/OrderDetails"
 import About from "./pages/About";
 import Saved from "./pages/Saved";
 import Navbar from "./components/Navbar";
@@ -14,7 +15,9 @@ function App() {
           <Route path="/" element={  <Home />} />
           <Route path="/about" element={  <About />} />
           <Route path="/order" element={  <Order />} />
+          <Route path="/order/:id" element={  <OrderDetails />} />
           <Route path="/saved" element={  <Saved />} />
+          
 
         </Routes>
         
