@@ -1,13 +1,9 @@
-import React from 'react'
-import {cakes} from "../cakedatabase"
-
+import React from "react";
+import Classics from "../components/Classics";
+import Chocolate from "../components/Chocolate";
+import Forests from "../components/Forests";
+import Fruity from "../components/Fruity";
 function Home() {
-  const displayCakesHome=cakes.map(cake=>(
-    <div className="each-cake-div" key={cake.id}>
-      <img className="each-cake-image" src={cake.image} alt="cake" />
-      <p className="each-cake-name">{cake.name}</p>
-    </div>
-  ))
   return (
     <div className="home-div">
       <div className="quote-div">
@@ -15,12 +11,13 @@ function Home() {
         <p>--vananenae</p>
       </div>
       <div className="all-cakes-home-div">
-      {displayCakesHome}
-
+        <Classics />
+        <Forests/>
+        <Chocolate/>
+        <Fruity/>
       </div>
-  
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
