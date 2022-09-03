@@ -190,7 +190,7 @@ export const cakes = [
   {
     id: 10,
     name: "Orange Cake",
-    type: "Fruity Flavours",
+    type: "Fruity",
     half_kg:900,
     one_kg:1900,
     two_kg:2800,
@@ -205,7 +205,7 @@ export const cakes = [
   {
     id: 11,
     name: "Blueberry Cake",
-    type: "Fruity Flavours",
+    type: "Fruity",
     half_kg:1050,
     one_kg:2100,
     two_kg:3100,
@@ -220,7 +220,7 @@ export const cakes = [
   {
     id: 12,
     name: "Strawberry Cake",
-    type: "Fruity Flavours",
+    type: "Fruity",
     half_kg:1050,
     one_kg:2100,
     two_kg:3100,
@@ -235,7 +235,7 @@ export const cakes = [
   {
     id: 13,
     name: "Lemon Cake",
-    type: "Fruity Flavours",
+    type: "Fruity",
     half_kg:950,
     one_kg:1900,
     two_kg:2800,
@@ -250,7 +250,7 @@ export const cakes = [
   {
     id: 14,
     name: "Carrot Cake",
-    type: "Fruity Flavours",
+    type: "Fruity",
     half_kg:950,
     one_kg:1900,
     two_kg:2800,
