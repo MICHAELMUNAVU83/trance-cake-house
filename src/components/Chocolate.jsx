@@ -13,6 +13,7 @@ function Chocolate() {
   });
   const OnMobile = layout.is("mobile");
   const OnDesktop = layout.is("desktop");
+ 
   const displayChocolateCakes = cakes.map(
     (cake) =>
       cake.type === "Chocolate" && (
@@ -20,6 +21,7 @@ function Chocolate() {
           <div className="each-cake-div" key={cake.id}>
             <img className="each-cake-image" src={cake.image} alt="cake" />
             <p className="each-cake-name">{cake.name}</p>
+            
           </div>
         </SplideSlide>
       )
