@@ -4,11 +4,12 @@ import Order from "./pages/Order";
 import OrderDetails from "./pages/OrderDetails"
 import About from "./pages/About";
 import Saved from "./pages/Saved";
+import { RoomProvider } from "./context"
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
+    <RoomProvider>
       <Router>
         <Navbar/>
         <Routes>
@@ -22,7 +23,10 @@ function App() {
         </Routes>
         
       </Router>
-    </div>
+
+    </RoomProvider>
+      
+    
   );
 }
 
