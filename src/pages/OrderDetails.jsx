@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext , useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { cakes } from "../cakedatabase";
+import {RoomContext} from "../context"
 
 function OrderDetails() {
+  useEffect(()=>{
+    filteredUnique()
+  })
+  const { addCart } = useContext(RoomContext);
+  const { filteredUnique} = useContext(RoomContext);
   const params = useParams();
   const [size, setSize] = useState("");
   
@@ -123,7 +129,16 @@ function OrderDetails() {
         </div>
       )
   ))
-    
+  const addToCartButton =
+  cakes.map(
+    (cake) =>
+      cake.id === Number(params.id) && (
+       <button onClick={()=>{
+         addCart(cake)
+         
+       }}>add to cart</button>
+      )
+  );
     
 
   
@@ -147,6 +162,7 @@ function OrderDetails() {
       {pickNumber}
       {checkoutButton}
     {displayTotalPrice}
+    {addToCartButton}
     </div>
   );
 }

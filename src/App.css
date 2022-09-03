@@ -72,6 +72,23 @@ nav > a{
  border-radius: 20px;
 
 }
+.each-ordered-cake-div button {
+  
+ background-color: red;
+ border-radius: 20px;
+ display: flex;
+ width: 70%;
+ font-weight: bolder;
+ margin-left: 15%;
+ font-size: 20px;
+ color: white;
+ justify-content: center;
+ align-content: center;
+ text-align: center;
+ padding: 20px;
+ border: none;
+
+}
 .each-ordered-cake-div .each-cake-image{
   height: 20rem;
   width: 22rem;
