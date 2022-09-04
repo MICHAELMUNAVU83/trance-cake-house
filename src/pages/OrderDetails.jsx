@@ -17,8 +17,8 @@ function OrderDetails() {
  
   useEffect(()=>{
     filteredUnique()
-    // eslint-disable-next-line
-  },[totalPrice])
+   
+  })
 
   const [numberofCakes, setNumberofCakes] = useState("");
   const price = Number(size) * Number(numberofCakes);
@@ -189,10 +189,14 @@ function OrderDetails() {
     }} placeholder="enter your  number"  />
 
     <button onClick={()=>{
-      console.log(customerNumber)
+      sendToWhatsapp(customerNumber)
     }} key="1">SEND ORDER</button>
 
   </div>
+  const sendToWhatsapp = (orderDetails) => {
+    const whatsAppLink = `https://api.whatsapp.com/send?phone=254796230862&text=%20${orderDetails}`;
+    window.open(whatsAppLink, "_blank");
+  };
  
 
   return (
