@@ -1,33 +1,51 @@
 import React, { useState, useContext , useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { cakes } from "../cakedatabase";
-import {RoomContext} from "../context"
+import { RoomContext } from "../context";
 
 function OrderDetails() {
+  const params = useParams();
+  const { addCart } = useContext(RoomContext);
+  const { filteredUnique } = useContext(RoomContext);
+  const [customerNumber , SetCustomerNumber]= useState("")
+  const [size, setSize] = useState("");
+  const addToCartEvent =(cake)=>{
+    addCart(cake)
+   
+  }
+  const [totalPrice, setTotalPrice] = useState("");
+ 
   useEffect(()=>{
     filteredUnique()
+   
   })
-  const { addCart } = useContext(RoomContext);
-  const { filteredUnique} = useContext(RoomContext);
-  const params = useParams();
-  const [size, setSize] = useState("");
-  
-  const [numberofCakes , setNumberofCakes]= useState("")
-  const price = Number(size) * Number(numberofCakes)
-  const [totalPrice , setTotalPrice]=useState("")
-  const selectSize = (e) => {
-    setSize(e.target.value)
-  };
-  const selectCakeNumber = (e)=>{
-      setNumberofCakes(e.target.value)
 
-  }
-  const postCheckout=()=>{
-    setTotalPrice(price)
-    
-  }
+  const [numberofCakes, setNumberofCakes] = useState("");
+  const price = Number(size) * Number(numberofCakes);
  
+  const selectSize = (e) => {
+    setSize(e.target.value);
+  };
+  const selectCakeNumber = (e) => {
+    setNumberofCakes(e.target.value);
+  };
+  const postCheckout = () => {
+    if(size==="" && numberofCakes==="" ){
+      alert("please select a size and number of cakes you want")
+    }
+    else if (size==="" && numberofCakes!==""){
+      alert("please select the number  of cakes you want")
+    }
+    else if (size !== "" && numberofCakes===""){
+      alert("please select the size you want")
+    }
+    else{
+      setTotalPrice(price);
+
+    }
   
+  };
+
   const orderedCakeImage = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
@@ -101,51 +119,85 @@ function OrderDetails() {
     (cake) =>
       cake.id === Number(params.id) && (
         <div key={cake.id}>
-            <label htmlFor="size-selector">Select a size:</label>
-          <select onChange={selectSize} value={size} name="size-selector" id="size-selector">
-          <option value="0">Select a size</option>
-            <option value={cake.half_kg}>Half kg at {cake.half_kg.toLocaleString()} Ksh</option>
-            <option value={cake.one_kg}>One kg at {cake.one_kg.toLocaleString()} Ksh</option>
-            <option value={cake.two_kg}>Two kgs at {cake.two_kg.toLocaleString()} Ksh</option>
-            <option value={cake.three_kg}>Three kgs at {cake.three_kg.toLocaleString()} Ksh</option>
-            <option value={cake.four_kg}>Four kgs at {cake.four_kg.toLocaleString()} Ksh</option>
+          <label htmlFor="size-selector">Select a size:</label>
+          <select
+            onChange={selectSize}
+            value={size}
+            name="size-selector"
+            id="size-selector"
+          >
+            <option value="">Select a size</option>
+            <option value={cake.half_kg}>
+              Half kg at {cake.half_kg.toLocaleString()} Ksh
+            </option>
+            <option value={cake.one_kg}>
+              One kg at {cake.one_kg.toLocaleString()} Ksh
+            </option>
+            <option value={cake.two_kg}>
+              Two kgs at {cake.two_kg.toLocaleString()} Ksh
+            </option>
+            <option value={cake.three_kg}>
+              Three kgs at {cake.three_kg.toLocaleString()} Ksh
+            </option>
+            <option value={cake.four_kg}>
+              Four kgs at {cake.four_kg.toLocaleString()} Ksh
+            </option>
           </select>
         </div>
       )
   );
-  const pickNumber = <div>
-    Select number of cakes  <input value={numberofCakes} type="number" onChange={selectCakeNumber} />
-  </div>
-  const checkoutButton = <div>
+  const pickNumber = (
+    <div>
+      Select number of cakes{" "}
+      <input value={numberofCakes} type="number" onChange={selectCakeNumber} />
+    </div>
+  );
+  const checkoutButton = (
+    <div>
       <button onClick={postCheckout}> Checkout</button>
-  </div>
-  
-  const displayTotalPrice = 
-  (totalPrice!=="" && size!=="" && cakes.map(
+    </div>
+  );
+
+  const displayTotalPrice =
+    totalPrice !== "" &&
+    size !== "" &&
+    cakes.map(
+      (cake) =>
+        cake.id === Number(params.id) && (
+          <div key={cake.id}>
+            The total amount payable for {numberofCakes} {cake.name} cake(s) is{" "}
+            {totalPrice.toLocaleString()} Ksh
+          </div>
+        )
+    );
+   
+  const addToCartButton = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
-        <div key={cake.id}>
-             The total amount payable for {numberofCakes} {cake.name} cake(s) is  {totalPrice.toLocaleString()} Ksh 
-        </div>
-      )
-  ))
-  const addToCartButton =
-  cakes.map(
-    (cake) =>
-      cake.id === Number(params.id) && (
-       <button onClick={()=>{
-         addCart(cake)
-         
-       }}>add to cart</button>
+        <button
+          onClick={()=>{
+            addToCartEvent(cake)
+          }}
+        >
+         ADD TO CART
+        </button>
       )
   );
-    
+  const customerForm = <div>
+    <input onChange={(e)=>{
+      SetCustomerNumber(e.target.value)
+    }} placeholder="enter your  number"  />
 
-  
-     
-   
+    <button onClick={()=>{
+      sendToWhatsapp(customerNumber)
+    }} key="1">SEND ORDER</button>
 
-
+  </div>
+  const sendToWhatsapp = (orderDetails) => {
+    const whatsAppLink = `https://api.whatsapp.com/send?phone=254796230862&text=%20${orderDetails}`;
+    window.open(whatsAppLink, "_blank");
+  };
+ 
 
   return (
     <div>
@@ -161,8 +213,9 @@ function OrderDetails() {
       {pickFlavour}
       {pickNumber}
       {checkoutButton}
-    {displayTotalPrice}
-    {addToCartButton}
+      {displayTotalPrice}
+      {addToCartButton}
+      {customerForm}
     </div>
   );
 }

@@ -10,6 +10,7 @@ function Order() {
       to={`/order/${cake.id}`}
     >
       <img className="each-cake-image" src={cake.image} alt="cake" />
+      
       <p className="each-cake-name">{cake.name}</p>
     </Link>
   ));
