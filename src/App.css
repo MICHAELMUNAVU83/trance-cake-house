@@ -117,17 +117,117 @@ li{
   text-decoration: none;
   list-style: none;
 }
-.order-details-div{
+.order-first-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+.order-first-div  > div {
+ margin: 5%;
+  
+}
+.order-details-image1 img{
+  height: 25rem;
+  border-radius: 20px;
+ 
+  
+}
+.order-details-image2 img{
+  height: 25rem;
+  border-radius: 20px;
+}
+
+.order-first-div .order-details-info{
+ 
+  font-size: 20px;
+}
+.order-first-div .order-details-info .ordered-cake-title {
+  display: flex;
+  flex-direction: column;
+
+}
+.order-first-div .order-details-info .ordered-cake-title > div .key-of-cake {
+  color: red;
+
+}
+.order-first-div .order-details-info .ordered-cake-title > div .value-of-cake {
+  color: pink;
+  font-weight: bolder;
+
+}
+
+.order-first-div .order-details-info .ordered-cake-prices h3{
+ text-decoration: underline;
+  color: red;
+}
+.order-first-div .order-details-info .ordered-cake-prices ul > li{
+  color: pink;
+ }
+ .order-first-div .order-details-info .ordered-cake-ingredients h3 {
+  color: red;
+
+
+}
+.order-first-div .order-details-info .ordered-cake-ingredients p{
+  color:blue;
+  
+
+}
+.add-to-cart-btn{
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 20px;
+  font-size: 15px;
+  border-radius: 20px;
+  width: 20%;
+  margin-left: 40%;
+  transition: all 600ms ;
+
+  
+}
+.add-to-cart-btn:hover{
+  transform: scale(1.1);
+
+  
+}
+.select-size-number-btn{
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  text-decoration: underline;
+  
 }
-.order-details-div > div{
- margin-left: 10%;
- margin-right: 10%;
+.pick-size{
+  margin-bottom: 2%;
 }
-.ordered-cake-image{
-  height: 10rem;
+.pick-size label{
+  color: red;
+  font-size: 25px;
+}
+.pick-size select{
+ height: 2rem;
+ width: 10rem;
+}
+
+
+.pick-size select > option{
+  color: red;
+}
+.pick-number{
+  display: flex;
+  flex-direction:row;
+  color: red;
+
+}
+.pick-number span{
+  color: red;
+  font-size: 23px;
+
+}
+.pick-number input{
+  height: 1.5rem;
+
 }
 h2{
   display: flex;
