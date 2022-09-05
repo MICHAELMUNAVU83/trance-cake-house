@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { cakes } from "../cakedatabase";
 
 function Order() {
+ 
   const displayCakesHome = cakes.map((cake) => (
     <Link
       key={cake.id}

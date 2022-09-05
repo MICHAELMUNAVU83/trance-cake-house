@@ -1,18 +1,31 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect , useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { cakes } from "../cakedatabase";
 import { RoomContext } from "../context";
-import { useForm, ValidationError } from "@formspree/react";
+import emailjs from '@emailjs/browser';
 
 function OrderDetails() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_8nuxsw3', 'template_4ebr03g', form.current, '6M-rV1iiaVqa5DANh')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
   const params = useParams();
   const { addCart } = useContext(RoomContext);
+  const Swal = require("sweetalert2");
   const { filteredUnique } = useContext(RoomContext);
   const [kilo, setKilo] = useState("");
   const [totalPrice, setTotalPrice] = useState("");
   const [numberofCakes, setNumberofCakes] = useState("");
   const [size, setSize] = useState("");
-  const [state, handleSubmit] = useForm("xkneooga");
+
 
   const addToCartEvent = (cake) => {
     addCart(cake);
@@ -28,26 +41,47 @@ function OrderDetails() {
     setNumberofCakes(e.target.value);
   };
   const postCheckout = () => {
+    setTotalPrice(price);
+    if(size !=="" && numberofCakes!== ""){
+      Swal.fire({
+        position: "top",
+        icon: "success",
+        title:
+          "Your Order was Received , we will reach you shortly to confirm your order details",
+        showConfirmButton: false,
+        timer: 2000,
+        width: "400px",
+      });
+
+    }
+    else{
+      Swal.fire({
+        position: "top",
+        icon: "error",
+        title:
+          "Fill the form completely and resubmit",
+        showConfirmButton: false,
+        timer: 2000,
+        width: "400px",
+      });
+
+    }
    
-      setTotalPrice(price);
-      cakes.map(cake =>{
-        if(Number(size) === cake.half_kg){
-        setKilo("half kg")
-        }
-        else if(Number(size) === cake.one_kg){
-          setKilo("one kg")
-        }
-        else if(Number(size) === cake.two_kg){
-          setKilo("Two kgs")
-        }
-        else if(Number(size) === cake.three_kg){
-          setKilo("three kgs")
-        }
-        else if(Number(size) === cake.four_kg){
-          setKilo("four kgs")
-        }
-      })
-  
+
+    // eslint-disable-next-line
+    cakes.map((cake) => {
+      if (Number(size) === cake.half_kg) {
+        setKilo("half kg");
+      } else if (Number(size) === cake.one_kg) {
+        setKilo("one kg");
+      } else if (Number(size) === cake.two_kg) {
+        setKilo("Two kgs");
+      } else if (Number(size) === cake.three_kg) {
+        setKilo("three kgs");
+      } else if (Number(size) === cake.four_kg) {
+        setKilo("four kgs");
+      }
+    });
   };
 
   const orderedCakeImage1 = cakes.map(
@@ -164,31 +198,30 @@ function OrderDetails() {
         </h3>
       )
   );
- 
 
   const formData = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
-        <form onSubmit={handleSubmit}>
-          <div  className="pick-number">
-          <span>Select number of cakes : </span>
-          <input
-            value={numberofCakes}
-            type="number"
-            name="number of cakes"
-            placeholder="number of cakes"
-            onChange={selectCakeNumber}
-          />
-        </div>
+        <form ref={form} onSubmit={sendEmail}>
+          <div className="pick-number">
+            <span>Select number of cakes : </span>
+            <input
+              value={numberofCakes}
+              type="number"
+              name="number_of_cakes"
+              placeholder="number of cakes"
+              onChange={selectCakeNumber}
+            />
+          </div>
           <div className="pick-size" key={cake.id}>
             <label htmlFor="Price for each cake">Select a size:</label>
-            <select 
-            required
+            <select
+              required
               onChange={(e) => {
                 setSize(e.target.value);
               }}
               value={size}
-              name="Price for each cake"
+              name="Price_for_each_cake"
               id="size-selector"
             >
               <option value="">Select a size</option>
@@ -209,25 +242,38 @@ function OrderDetails() {
               </option>
             </select>
           </div>
+          <span>Input your Name :</span>
+          <input name="Name_of_customer" type="name" required />
 
           <span>Input your number</span>
+          <input name="Number_of_customer" type="number" required />
+
           <input
-            name="Number of Customer"
-            type="number"
-            required
+            className="do-not-display"
            
+            name="Cake_Name"
+            value={cake.name}
+            readOnly
           />
+          <input
           
-
-         Cake name: <input id="message" name="Cake Name" value={cake.name} readOnly />
-         Kgs chosen: <input id="kil" name="Kilogram the nigger wants" value={kilo} readOnly />
-         Total Price: <input id="Total Price" name="Total Price" value={totalPrice.toLocaleString()} readOnly />
-
+            className="do-not-display"
+            name="Size_Ordered"
+            value={kilo}
+            readOnly
+          />
+          <input
+           
+            className="do-not-display"
+            name="Total_Price"
+            value={totalPrice.toLocaleString()}
+            readOnly
+          />
 
           <button
             type="submit"
             onClick={postCheckout}
-            disabled={state.submitting}
+           
           >
             Submit
           </button>
@@ -248,9 +294,6 @@ function OrderDetails() {
       </div>
       {addToCartButton}
       {selectSizeAndNumberTitle}
-      
-     
-
       {formData}
       {displayTotalPrice}
     </div>
