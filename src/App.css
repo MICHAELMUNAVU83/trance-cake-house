@@ -128,19 +128,21 @@ li{
   
 }
 .order-details-image1 img{
-  height: 25rem;
+  height: 20rem;
+  width: 20rem;
   border-radius: 20px;
  
   
 }
 .order-details-image2 img{
-  height: 25rem;
+  height: 20rem;
+  width: 20rem;
   border-radius: 20px;
 }
 
 .order-first-div .order-details-info{
  
-  font-size: 20px;
+  font-size: 18px;
 }
 .order-first-div .order-details-info .ordered-cake-title {
   display: flex;
@@ -233,7 +235,12 @@ h2{
   display: flex;
   justify-content: center;
 }
-
+form{
+  margin-bottom: 5%;
+}
+.display-total{
+  margin-bottom: 5%;
+}
 
 @media only screen and (max-width: 740px){
   .each-cake-div{

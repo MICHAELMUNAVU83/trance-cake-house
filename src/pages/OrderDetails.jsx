@@ -30,6 +30,23 @@ function OrderDetails() {
   const postCheckout = () => {
    
       setTotalPrice(price);
+      cakes.map(cake =>{
+        if(Number(size) === cake.half_kg){
+        setKilo("half kg")
+        }
+        else if(Number(size) === cake.one_kg){
+          setKilo("one kg")
+        }
+        else if(Number(size) === cake.two_kg){
+          setKilo("Two kgs")
+        }
+        else if(Number(size) === cake.three_kg){
+          setKilo("three kgs")
+        }
+        else if(Number(size) === cake.four_kg){
+          setKilo("four kgs")
+        }
+      })
   
   };
 
@@ -117,7 +134,7 @@ function OrderDetails() {
     cakes.map(
       (cake) =>
         cake.id === Number(params.id) && (
-          <div key={cake.id}>
+          <div className="display-total" key={cake.id}>
             The total amount payable for {numberofCakes} {cake.name} cake(s) is{" "}
             {totalPrice.toLocaleString()} Ksh
           </div>
@@ -139,7 +156,7 @@ function OrderDetails() {
       )
   );
 
-  const selectSizeAndNumber = cakes.map(
+  const selectSizeAndNumberTitle = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
         <h3 className="select-size-number-btn" key={cake.id}>
@@ -147,6 +164,7 @@ function OrderDetails() {
         </h3>
       )
   );
+ 
 
   const formData = cakes.map(
     (cake) =>
@@ -163,14 +181,14 @@ function OrderDetails() {
           />
         </div>
           <div className="pick-size" key={cake.id}>
-            <label htmlFor="size-selector">Select a size:</label>
+            <label htmlFor="Price for each cake">Select a size:</label>
             <select 
             required
               onChange={(e) => {
                 setSize(e.target.value);
               }}
               value={size}
-              name="size-selector"
+              name="Price for each cake"
               id="size-selector"
             >
               <option value="">Select a size</option>
@@ -202,7 +220,8 @@ function OrderDetails() {
           
 
          Cake name: <input id="message" name="Cake Name" value={cake.name} readOnly />
-         {/* Total Price: <input id="Total Price" name="Cake Name" value={totalPrice} readOnly /> */}
+         Kgs chosen: <input id="kil" name="Kilogram the nigger wants" value={kilo} readOnly />
+         Total Price: <input id="Total Price" name="Total Price" value={totalPrice.toLocaleString()} readOnly />
 
 
           <button
@@ -228,7 +247,7 @@ function OrderDetails() {
         </div>
       </div>
       {addToCartButton}
-      {selectSizeAndNumber}
+      {selectSizeAndNumberTitle}
       
      
 
