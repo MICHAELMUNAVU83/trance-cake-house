@@ -1,111 +1,102 @@
-
-
-.logo-image{
-height:100%;
+.logo-image {
+  height: 100%;
 }
-nav{
+nav {
   display: flex;
   flex-direction: row;
-  background: #F0A8C6;
+  background: #f0a8c6;
   opacity: 0.9;
   justify-content: center;
 }
-nav > a{
+nav > a {
   margin-right: 4%;
   margin-left: 4%;
   margin-top: 2%;
   font-size: 30px;
   text-decoration: none;
   color: #dc3d39;
-  
 }
-.each-cake-div{
-  
-  border: 2px dashed #F0A8C6 ;
+.each-cake-div {
+  border: 2px dashed #f0a8c6;
   width: 25rem;
   padding-bottom: 0.5rem;
   margin: 2%;
- border-radius: 20px;
-
+  border-radius: 20px;
 }
 
-.each-cake-div .each-cake-image{
+.each-cake-div .each-cake-image {
   height: 20rem;
   width: 25rem;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 
-.each-cake-div .each-cake-name{
+.each-cake-div .each-cake-name {
   display: flex;
   background-color: red;
   color: white;
-  font-weight: 20px;
+  font-weight: bolder;
+  font-size: 20px;
   border-radius: 20px;
-  padding: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
   width: 60%;
   margin-left: 15%;
   text-align: center;
   align-items: center;
   justify-content: center;
   font-weight: bolder;
-  font-size: 1rem;
 }
 
-
-.all-cakes-order-div{
+.all-cakes-order-div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.all-cakes-order-div a{
- text-decoration: none;
+.all-cakes-order-div a {
+  text-decoration: none;
 }
 
-
 .each-ordered-cake-div {
-  
-  background-color: #F0A8C6;
+  background-color: #f0a8c6;
   width: 22rem;
   padding-bottom: 0.5rem;
   margin: 2%;
- border-radius: 20px;
-
+  border-radius: 20px;
 }
 .each-ordered-cake-div button {
-  
- background-color: red;
- border-radius: 20px;
- display: flex;
- width: 70%;
- font-weight: bolder;
- margin-left: 15%;
- font-size: 20px;
- color: white;
- justify-content: center;
- align-content: center;
- text-align: center;
- padding: 20px;
- border: none;
-
+  background-color: red;
+  border-radius: 20px;
+  display: flex;
+  width: 70%;
+  font-weight: bolder;
+  margin-left: 15%;
+  font-size: 20px;
+  color: white;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  padding: 20px;
+  border: none;
 }
-.each-ordered-cake-div .each-cake-image{
+.each-ordered-cake-div .each-cake-image {
   height: 20rem;
   width: 22rem;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-.each-ordered-cake-div .each-cake-name{
+.each-ordered-cake-div .each-cake-name {
   font-size: 2rem;
   display: flex;
   justify-content: center;
-  color:  red;
+  color: red;
+  font-weight: bolder;
   text-decoration: none;
 }
 
-
-
-.each-ordered-cake-div a{
+.each-ordered-cake-div a {
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -113,7 +104,7 @@ nav > a{
   font-weight: bolder;
 }
 
-li{
+li {
   text-decoration: none;
   list-style: none;
 }
@@ -121,147 +112,178 @@ li{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  
 }
-.order-first-div  > div {
- margin: 5%;
-  
+.order-first-div > div {
+  margin: 5%;
 }
-.order-details-image1 img{
+.order-details-image1 img {
   height: 20rem;
   width: 20rem;
   border-radius: 20px;
- 
-  
 }
-.order-details-image2 img{
+.order-details-image2 img {
   height: 20rem;
   width: 20rem;
   border-radius: 20px;
 }
 
-.order-first-div .order-details-info{
- 
-  font-size: 18px;
+.order-first-div .order-details-info {
+  font-size: 25px;
 }
 .order-first-div .order-details-info .ordered-cake-title {
   display: flex;
   flex-direction: column;
-
 }
 .order-first-div .order-details-info .ordered-cake-title > div .key-of-cake {
   color: red;
-
 }
 .order-first-div .order-details-info .ordered-cake-title > div .value-of-cake {
   color: pink;
   font-weight: bolder;
-
 }
 
-.order-first-div .order-details-info .ordered-cake-prices h3{
- text-decoration: underline;
+.order-first-div .order-details-info .ordered-cake-prices h3 {
+  text-decoration: underline;
   color: red;
 }
-.order-first-div .order-details-info .ordered-cake-prices ul > li{
+.order-first-div .order-details-info .ordered-cake-prices ul > li {
   color: pink;
- }
- .order-first-div .order-details-info .ordered-cake-ingredients h3 {
-  color: red;
-
-
 }
-.order-first-div .order-details-info .ordered-cake-ingredients p{
-  color:blue;
-  
 
-}
-.add-to-cart-btn{
+.add-to-cart-btn {
   color: white;
   background-color: red;
   border: none;
   padding: 20px;
   font-size: 15px;
+  font-weight: bolder;
   border-radius: 20px;
   width: 20%;
   margin-left: 40%;
-  transition: all 600ms ;
-
-  
+  transition: all 600ms;
 }
-.add-to-cart-btn:hover{
+.add-to-cart-btn:hover {
   transform: scale(1.1);
-
-  
 }
-.select-size-number-btn{
+.select-size-number-text {
   display: flex;
+  font-weight: bolder;
+  font-size: 2.5rem;
   justify-content: center;
   text-decoration: underline;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+}
+form > div {
+  margin-bottom: 1%;
+}
+form .pick-size label {
+  font-size: 1rem;
+}
+form .pick-size select {
+  height: 2rem;
+  width: 24%;
+}
+form .pick-number span {
+  font-size: 1rem;
+}
+form .pick-number input {
+  width: 16%;
+  height: 2rem;
+}
+form .customer-name-input span {
+  font-size: 1rem;
+}
+form .customer-name-input input {
+  width: 20%;
+  height: 2rem;
+}
+form .customer-number-input span {
+  font-size: 1rem;
+}
+form .customer-number-input input{
+  width: 19%;
+  height: 2rem;
+}
+form .submit-btn-div button{
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bolder;
+  border-radius: 20px;
+  width: 20%;
+  margin-left: 35%;
+  transition: all 600ms;
   
 }
-.pick-size{
-  margin-bottom: 2%;
-}
-.pick-size label{
-  color: red;
-  font-size: 25px;
-}
-.pick-size select{
- height: 2rem;
- width: 10rem;
-}
 
-
-.pick-size select > option{
-  color: red;
-}
-.pick-number{
-  display: flex;
-  flex-direction:row;
-  color: red;
-
-}
-.pick-number span{
-  color: red;
-  font-size: 23px;
-
-}
-.pick-number input{
-  height: 1.5rem;
-
-}
-h2{
+h2 {
   display: flex;
   justify-content: center;
 }
-form{
+
+.display-total {
   margin-bottom: 5%;
 }
-.display-total{
-  margin-bottom: 5%;
-}
-.do-not-display{
+.do-not-display {
   display: none;
 }
-.swal-wide{
-  width: 800px  !important;
+.swal-wide {
+  width: 800px !important;
 }
-@media only screen and (max-width: 740px){
-  .each-cake-div{
-    
-    width: 22rem;
-  
-  
+@media only screen and (max-width: 740px) {
+  .logo-image {
+    height: 40%;
   }
-  .swal-wide{
-    width: 300px !important;
+  nav {
+    width: 100%;
   }
-  .each-cake-div .each-cake-image{
-   
-    width: 22rem;
-   
-   
+  nav > a {
+    font-size: 10px;
   }
+  .each-cake-div {
+    width: 20rem;
+  }
+  .each-cake-div .each-cake-image {
+    width: 20rem;
+  }
+  .order-first-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .order-first-div .order-details-info {
+    font-size: 20px;
+  }
+  .add-to-cart-btn {
+    width: 70%;
+    margin-left: 15%;
+  }
+  .select-size-number-text{
+    font-size: 0.8rem;
+    height: 2rem;
+  }
+  form .pick-size select{
+    width: 60%;
+    margin-left: 1%;
+  }
+  form .pick-number input{
+    width: 30%;
+  }
+  form .customer-name-input input{
+    width: 40%;
+  }
+  form .customer-number-input input  {
+    width: 32%;
+  }
+  form .submit-btn-div button{
+    width: 70%;
+    margin-left: 15%;
 
+  }
 }

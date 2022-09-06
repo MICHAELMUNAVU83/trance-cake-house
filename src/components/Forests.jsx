@@ -34,10 +34,10 @@ function Forests() {
             arrows: false,
             pagination: true,
             autoplay:true,
-            rewindByDrag:true,
-            speed:3000,
+            speed:4000,
             type:"loop",
-            interval:2000,
+            interval:3000,
+            rewindByDrag:true,
             drag: "free",
             gap: "2rem",
           }}
@@ -52,12 +52,13 @@ function Forests() {
             arrows: false,
             autoplay:true,
             rewindByDrag:true,
-            interval:2000,
-            speed:3000,
+            interval:3000,
+            speed:4000,
             type:"loop",
             gap:"2px",
             pagination: true,
             drag: "free",
+           
            
           }}
         >

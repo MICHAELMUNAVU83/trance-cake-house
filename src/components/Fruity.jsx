@@ -33,8 +33,11 @@ function Fruity() {
             perPage: 3,
             arrows: false,
             pagination: true,
-            rewindByDrag:true,
+            autoplay:true,
+            speed:4000,
             type:"loop",
+            interval:3000,
+            rewindByDrag:true,
             drag: "free",
             gap: "2rem",
           }}
@@ -47,9 +50,10 @@ function Fruity() {
           options={{
             perPage: 1,
             arrows: false,
-          
+            autoplay:true,
             rewindByDrag:true,
-           
+            interval:3000,
+            speed:4000,
             type:"loop",
             gap:"2px",
             pagination: true,
