@@ -1,8 +1,8 @@
-import React, { useState, useContext, useEffect , useRef } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useState, useContext, useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
 import { cakes } from "../cakedatabase";
 import { RoomContext } from "../context";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 function OrderDetails() {
   const form = useRef();
@@ -10,12 +10,21 @@ function OrderDetails() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_8nuxsw3', 'template_4ebr03g', form.current, '6M-rV1iiaVqa5DANh')
-      .then((result) => {
+    emailjs
+      .sendForm(
+        "service_8nuxsw3",
+        "template_4ebr03g",
+        form.current,
+        "6M-rV1iiaVqa5DANh"
+      )
+      .then(
+        (result) => {
           console.log(result.text);
-      }, (error) => {
+        },
+        (error) => {
           console.log(error.text);
-      });
+        }
+      );
   };
   const params = useParams();
   const { addCart } = useContext(RoomContext);
@@ -25,7 +34,8 @@ function OrderDetails() {
   const [totalPrice, setTotalPrice] = useState("");
   const [numberofCakes, setNumberofCakes] = useState("");
   const [size, setSize] = useState("");
-
+  const [nameOfCustomer , setNameOfCustomer] = useState("")
+  const [numberOfCustomer , setNumberOfCustomer] = useState("")
 
   const addToCartEvent = (cake) => {
     addCart(cake);
@@ -33,16 +43,16 @@ function OrderDetails() {
 
   const price = Number(size) * Number(numberofCakes);
 
-  // useEffect(() => {
-  //   filteredUnique();
-  // });
+  useEffect(() => {
+    filteredUnique();
+  });
 
   const selectCakeNumber = (e) => {
     setNumberofCakes(e.target.value);
   };
   const postCheckout = () => {
     setTotalPrice(price);
-    if(size !=="" && numberofCakes!== ""){
+    if (size !== "" && numberofCakes !== "" && numberOfCustomer!=="" && nameOfCustomer!=="") {
       Swal.fire({
         position: "top",
         icon: "success",
@@ -52,21 +62,16 @@ function OrderDetails() {
         timer: 2000,
         width: "400px",
       });
-
-    }
-    else{
+    } else {
       Swal.fire({
         position: "top",
         icon: "error",
-        title:
-          "Fill the form completely and resubmit",
+        title: "Fill the form completely and resubmit",
         showConfirmButton: false,
         timer: 2000,
         width: "400px",
       });
-
     }
-   
 
     // eslint-disable-next-line
     cakes.map((cake) => {
@@ -101,11 +106,11 @@ function OrderDetails() {
       cake.id === Number(params.id) && (
         <div className="ordered-cake-title" key={cake.id}>
           <div>
-            <span className="key-of-cake">Name :</span>{" "}
+            <span className="key-of-cake">NAME :</span>{" "}
             <span className="value-of-cake">{cake.name} </span>
           </div>
           <div>
-            <span className="key-of-cake">Type :</span>{" "}
+            <span className="key-of-cake">TYPE :</span>{" "}
             <span className="value-of-cake">{cake.type} </span>
           </div>
         </div>
@@ -126,42 +131,7 @@ function OrderDetails() {
         </div>
       )
   );
-  // eslint-disable-next-line
-  const orderedCakeIngridients = cakes.map((cake) => {
-    if (cake.id === Number(params.id) && cake.eggs && cake.milk) {
-      return (
-        <div className="ordered-cake-ingredients" key={cake.id}>
-          <h3>Ingredients</h3>
-          <p>has eggs</p>
-          <p>has milk</p>
-        </div>
-      );
-    } else if (cake.id === Number(params.id) && !cake.eggs && cake.milk) {
-      return (
-        <div className="ordered-cake-ingredients" key={cake.id}>
-          <h3>Ingredients</h3>
-          <p>has no eggs</p>
-          <p>has milk</p>
-        </div>
-      );
-    } else if (cake.id === Number(params.id) && cake.eggs && !cake.milk) {
-      return (
-        <div className="ordered-cake-ingredients" key={cake.id}>
-          <h3>Ingredients</h3>
-          <p>has eggs</p>
-          <p>has no milk</p>
-        </div>
-      );
-    } else if (cake.id === Number(params.id) && !cake.eggs && !cake.milk) {
-      return (
-        <div className="ordered-cake-ingredients" key={cake.id}>
-          <h3>Ingredients</h3>
-          <p>has no eggs</p>
-          <p>has no milk</p>
-        </div>
-      );
-    }
-  });
+
   const displayTotalPrice =
     totalPrice !== "" &&
     size !== "" &&
@@ -193,7 +163,7 @@ function OrderDetails() {
   const selectSizeAndNumberTitle = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
-        <h3 className="select-size-number-btn" key={cake.id}>
+        <h3 className="select-size-number-text" key={cake.id}>
           FILL THE FORM BELOW TO COMPLETE YOUR ORDER
         </h3>
       )
@@ -203,7 +173,6 @@ function OrderDetails() {
     (cake) =>
       cake.id === Number(params.id) && (
         <form ref={form} onSubmit={sendEmail}>
-         
           <div className="pick-size" key={cake.id}>
             <label htmlFor="Price for each cake">Select a size:</label>
             <select
@@ -243,41 +212,32 @@ function OrderDetails() {
               onChange={selectCakeNumber}
             />
           </div>
-          <span>Input your Name :</span>
-          <input name="Name_of_customer" type="name" required />
-
-          <span>Input your number</span>
-          <input name="Number_of_customer" type="number" required />
-
-          <input
-            className="do-not-display"
-           
-            name="Cake_Name"
-            value={cake.name}
-            readOnly
-          />
-          <input
-          
-            className="do-not-display"
-            name="Size_Ordered"
-            value={kilo}
-            readOnly
-          />
-          <input
-           
-            className="do-not-display"
-            name="Total_Price"
-            value={totalPrice.toLocaleString()}
-            readOnly
-          />
-
-          <button
-            type="submit"
-            onClick={postCheckout}
-           
-          >
-            Submit
-          </button>
+          <div className="customer-name-input">
+            <span>Input your Name : </span>
+            <input value={nameOfCustomer} onChange={(e)=>{
+              setNameOfCustomer(e.target.value)
+            }} name="Name_of_customer" type="name" required />
+          </div>
+          <div className="customer-number-input">
+            <span>Input your number: </span>
+            <input value={numberOfCustomer} onChange={(e)=>{
+              setNumberOfCustomer(e.target.value)
+            }} name="Number_of_customer" type="number" required />
+          </div>
+          <div className="do-not-display">
+            <input name="Cake_Name" value={cake.name} readOnly />
+            <input name="Size_Ordered" value={kilo} readOnly />
+            <input
+              name="Total_Price"
+              value={totalPrice.toLocaleString()}
+              readOnly
+            />
+          </div>
+          <div className="submit-btn-div">
+            <button type="submit" onClick={postCheckout}>
+              Submit
+            </button>
+          </div>
         </form>
       )
   );
@@ -290,7 +250,6 @@ function OrderDetails() {
         <div className="order-details-info">
           {orderedCakeTitle}
           {orderedCakePrices}
-          {orderedCakeIngridients}
         </div>
       </div>
       {addToCartButton}
