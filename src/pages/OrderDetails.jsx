@@ -203,16 +203,7 @@ function OrderDetails() {
     (cake) =>
       cake.id === Number(params.id) && (
         <form ref={form} onSubmit={sendEmail}>
-          <div className="pick-number">
-            <span>Select number of cakes : </span>
-            <input
-              value={numberofCakes}
-              type="number"
-              name="number_of_cakes"
-              placeholder="number of cakes"
-              onChange={selectCakeNumber}
-            />
-          </div>
+         
           <div className="pick-size" key={cake.id}>
             <label htmlFor="Price for each cake">Select a size:</label>
             <select
@@ -241,6 +232,16 @@ function OrderDetails() {
                 Four kgs at {cake.four_kg.toLocaleString()} Ksh
               </option>
             </select>
+          </div>
+          <div className="pick-number">
+            <span>Select number of cakes : </span>
+            <input
+              value={numberofCakes}
+              type="number"
+              name="number_of_cakes"
+              placeholder="number of cakes"
+              onChange={selectCakeNumber}
+            />
           </div>
           <span>Input your Name :</span>
           <input name="Name_of_customer" type="name" required />
