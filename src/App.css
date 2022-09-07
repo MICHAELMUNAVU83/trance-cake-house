@@ -1,5 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo&family=Bebas+Neue&family=Combo&family=Comfortaa&family=Dancing+Script:wght@500&family=Delius&family=Inter:wght@300&family=Kanit:wght@200&family=Krona+One&family=Merienda&family=Playfair+Display:ital@1&family=Roboto+Serif:opsz,wght@8..144,600&display=swap');
 
+.no-cakes{
+  display: flex;
+  color: red;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  margin-left: 33%;
+  background-color: #f0a8c6;
+  font-family: 'Arimo', sans-serif;
+  padding: 40px;
+  border-radius: 30px;
+  
+}
+.no-cakes a{
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  width: 60%;
+  font-weight: bolder;
+  margin-left: 16%;
+  border-radius: 30px;
+  padding: 20px;
+  font-size: 2rem;
+}
 .each-cake-div {
   border: 2px dashed #f0a8c6;
   width: 23rem;
@@ -50,7 +75,19 @@
   justify-content: center;
   font-weight: bolder;
 }
+.flavour-select span{
+  color: red;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
 
+}
+.flavour-select select{
+  height: 1.5rem;
+}
+.flavour-select select option{
+  font-family: 'Arimo', sans-serif;
+
+}
 .all-cakes-order-div {
   display: flex;
   flex-wrap: wrap;
@@ -287,12 +324,30 @@ h2 {
   height: 24rem;
   border-radius: 20px;
  
+} 
+.swal-wide {
+  width: 20rem !important;
+  color: red;
 }
 @media only screen and (max-width: 740px) {
-  .typed{
+  .no-cakes{
+    width: 70%;
+    margin-left: 5%;
+  }
+  .no-cakes a{
     font-size: 1rem;
   }
-
+  .typed{
+    font-size: 1.2rem;
+  }
+  .flavour-select span{
+    
+    font-size: 1rem;
+  
+  }
+  .flavour-select select{
+    height: 1.5rem;
+  }
   .each-cake-div {
     width: 20rem;
    
@@ -322,13 +377,13 @@ h2 {
     margin-left: 1%;
   }
   form .pick-number input{
-    width: 41%;
+    width: 30%;
   }
   form .customer-name-input input{
-    width: 52%;
+    width: 40%;
   }
   form .customer-number-input input  {
-    width: 50%;
+    width: 40%;
   }
   form .submit-btn-div button{
     width: 50%;

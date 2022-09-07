@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { cakes } from "../cakedatabase";
 import { RoomContext } from "../context";
 import emailjs from "@emailjs/browser";
+import { toast, ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 import { GiCakeSlice } from 'react-icons/gi';
 import { HiOutlineCake } from 'react-icons/hi';
 import {TbCake} from 'react-icons/tb';
@@ -33,7 +35,6 @@ function OrderDetails() {
   };
   const params = useParams();
   const { addCart } = useContext(RoomContext);
-  const Swal = require("sweetalert2");
   const [kilo, setKilo] = useState("");
   const [totalPrice, setTotalPrice] = useState("");
   const [numberofCakes, setNumberofCakes] = useState("");
@@ -43,6 +44,15 @@ function OrderDetails() {
 
   const addToCartEvent = (cake) => {
     addCart(cake);
+    toast.success('Added to Cart!', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
   };
 
   const price = Number(size) * Number(numberofCakes);
@@ -59,24 +69,27 @@ function OrderDetails() {
   const postCheckout = () => {
     setTotalPrice(price);
     if (size !== "" && numberofCakes !== "" && numberOfCustomer!=="" && nameOfCustomer!=="") {
-      Swal.fire({
-        position: "top",
-        icon: "success",
-        title:
-          "Your Order was Received , we will reach you shortly to confirm your order details",
-        showConfirmButton: false,
-        timer: 2000,
-        width: "400px",
-      });
+      
+      toast.success('Your request was received , we will reach out in a few to confirm your order ', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
     } else {
-      Swal.fire({
-        position: "top",
-        icon: "error",
-        title: "Fill the form completely and resubmit",
-        showConfirmButton: false,
-        timer: 5000,
-        width: "400px",
-      });
+      toast.error(' Kindly Fill the whole form then place your order', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    
     }
 
     // eslint-disable-next-line
@@ -98,19 +111,19 @@ function OrderDetails() {
   const orderedCakeImage1 = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
-        <img key={cake.id} src={cake.more_images[0]} alt={cake.name} />
+        <img key={cake.more_images[0]} src={cake.more_images[0]} alt={cake.name} />
       )
   );
   const orderedCakeImage2 = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
-        <img key={cake.id} src={cake.more_images[1]} alt={cake.name} />
+        <img key={cake.more_images[1]} src={cake.more_images[1]} alt={cake.name} />
       )
   );
   const orderedCakeTitle = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
-        <div className="ordered-cake-title" key={cake.id}>
+        <div className="ordered-cake-title" key={cake.type}>
           <div>
             <span className="key-of-cake">NAME :</span>{" "}
             <span className="value-of-cake">{cake.name} </span>
@@ -125,7 +138,7 @@ function OrderDetails() {
   const orderedCakePrices = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
-        <div className="ordered-cake-prices" key={cake.id}>
+        <div className="ordered-cake-prices" key={cake.name}>
           <h3>Prices</h3>
           <ul>
             <li> <span> < GiCakeSlice/>  Half Kg :</span> {cake.half_kg.toLocaleString()}Ksh</li>
@@ -156,7 +169,7 @@ function OrderDetails() {
       cake.id === Number(params.id) && (
         <button
           className="add-to-cart-btn"
-          key={cake.id}
+          key={cake.eggs}
           onClick={() => {
             addToCartEvent(cake);
           }}
@@ -169,7 +182,7 @@ function OrderDetails() {
   const selectSizeAndNumberTitle = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
-        <h3 className="select-size-number-text" key={cake.id}>
+        <h3 className="select-size-number-text" key={cake.half_kg}>
           FILL THE FORM BELOW TO COMPLETE YOUR ORDER
         </h3>
       )
@@ -178,7 +191,7 @@ function OrderDetails() {
   const formData = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
-        <form ref={form} onSubmit={sendEmail}>
+        <form key={cake.id} ref={form} onSubmit={sendEmail}>
           <div className="pick-size" key={cake.id}>
             <label htmlFor="Price for each cake">Select a size:</label>
             <select
@@ -262,6 +275,7 @@ function OrderDetails() {
       {selectSizeAndNumberTitle}
       {formData}
       {displayTotalPrice}
+      <ToastContainer/>
     </div>
   );
 }

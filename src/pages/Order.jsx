@@ -5,8 +5,16 @@ import { cakes } from "../cakedatabase";
 function Order() {
   const [flavor, setFlavor] = useState("");
   const flavorSelector = (
-    <select
-      name="cars"
+    <div className="flavour-select">
+      <span>
+        Select the Flavour you want to Order : 
+      </span>
+      <span>
+       {"  "}
+      </span>
+
+       <select
+      name="Flavor"
       value={flavor}
       onChange={(e) => {
         setFlavor(e.target.value);
@@ -14,12 +22,16 @@ function Order() {
       key="flavor selector"
       id="cars"
     >
-      <option value="">All Flavors</option>
-      <option value="classic">Classics</option>
-      <option value="Forests">Forest Cakes</option>
-      <option value="Fruity">Fruity Cakes</option>
-      <option value="Chocolate">Chocolate Flavors</option>
+    
+      <option value="">All Flavours</option>
+      <option value="classic">Classic Flavours</option>
+      <option value="Forests">Forest Flavoured Cakes</option>
+      <option value="Fruity">Fruity Flavoured Cakes</option>
+      <option value="Chocolate">Chocolate Flavoured Flavors</option>
     </select>
+
+    </div>
+   
   );
   // eslint-disable-next-line
   const displayCakes = cakes.map((cake) => {
@@ -52,7 +64,7 @@ function Order() {
 
   return (
     <div>
-      Click on the cake you would love to order
+      
       {flavorSelector}
       <div className="all-cakes-order-div">{displayCakes}</div>
     </div>
