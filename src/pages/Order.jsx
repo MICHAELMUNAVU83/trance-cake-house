@@ -30,7 +30,7 @@ function Order() {
           className="each-ordered-cake-div"
           to={`/order/${cake.id}`}
         >
-          <img className="each-cake-image" src={cake.image} alt="cake" />
+          <img className="each-cake-image" src={cake.more_images[1]} alt="cake" />
 
           <p className="each-cake-name">{cake.name}</p>
         </Link>
@@ -42,7 +42,7 @@ function Order() {
           className="each-ordered-cake-div"
           to={`/order/${cake.id}`}
         >
-          <img className="each-cake-image" src={cake.image} alt="cake" />
+          <img className="each-cake-image" src={cake.more_images[1]} alt="cake" />
 
           <p className="each-cake-name">{cake.name}</p>
         </Link>

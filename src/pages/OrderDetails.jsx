@@ -3,6 +3,11 @@ import { useParams } from "react-router-dom";
 import { cakes } from "../cakedatabase";
 import { RoomContext } from "../context";
 import emailjs from "@emailjs/browser";
+import { GiCakeSlice } from 'react-icons/gi';
+import { HiOutlineCake } from 'react-icons/hi';
+import {TbCake} from 'react-icons/tb';
+import { GiStairsCake } from 'react-icons/gi';
+import { SiCakephp } from 'react-icons/si';
 
 function OrderDetails() {
   const form = useRef();
@@ -29,7 +34,6 @@ function OrderDetails() {
   const params = useParams();
   const { addCart } = useContext(RoomContext);
   const Swal = require("sweetalert2");
-  const { filteredUnique } = useContext(RoomContext);
   const [kilo, setKilo] = useState("");
   const [totalPrice, setTotalPrice] = useState("");
   const [numberofCakes, setNumberofCakes] = useState("");
@@ -48,9 +52,6 @@ function OrderDetails() {
   }, [])
     
 
-  useEffect(() => {
-    filteredUnique();
-  });
 
   const selectCakeNumber = (e) => {
     setNumberofCakes(e.target.value);
@@ -127,11 +128,11 @@ function OrderDetails() {
         <div className="ordered-cake-prices" key={cake.id}>
           <h3>Prices</h3>
           <ul>
-            <li> Half Kg :{cake.half_kg}</li>
-            <li> One Kg :{cake.one_kg}</li>
-            <li>Two kg: {cake.two_kg}</li>
-            <li> Three kg:{cake.three_kg}</li>
-            <li> Four Kg:{cake.four_kg}</li>
+            <li> <span> < GiCakeSlice/>  Half Kg :</span> {cake.half_kg.toLocaleString()}Ksh</li>
+            <li> <span>  < TbCake/>  One Kg :</span>{cake.one_kg.toLocaleString()} Ksh</li>
+            <li> <span> <SiCakephp/>  Two kg: </span>  {cake.two_kg.toLocaleString()} Ksh</li>
+            <li> <span> < HiOutlineCake/> Three kg: </span>  {cake.three_kg.toLocaleString()} Ksh</li>
+            <li>  <span> <GiStairsCake/> Four Kg: </span> {cake.four_kg.toLocaleString()} Ksh</li>
           </ul>
         </div>
       )
@@ -219,13 +220,13 @@ function OrderDetails() {
           </div>
           <div className="customer-name-input">
             <span>Input your Name : </span>
-            <input value={nameOfCustomer} onChange={(e)=>{
+            <input placeholder="Your name ..." value={nameOfCustomer} onChange={(e)=>{
               setNameOfCustomer(e.target.value)
             }} name="Name_of_customer" type="name" required />
           </div>
           <div className="customer-number-input">
             <span>Input your number: </span>
-            <input value={numberOfCustomer} onChange={(e)=>{
+            <input placeholder="Your number ..." value={numberOfCustomer} onChange={(e)=>{
               setNumberOfCustomer(e.target.value)
             }} name="Number_of_customer" type="number" required />
           </div>
@@ -240,7 +241,7 @@ function OrderDetails() {
           </div>
           <div className="submit-btn-div">
             <button type="submit" onClick={postCheckout}>
-              Submit
+             ORDER NOW
             </button>
           </div>
         </form>

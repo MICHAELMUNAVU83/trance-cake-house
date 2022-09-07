@@ -55,14 +55,13 @@ function Classics() {
         <Splide
           options={{
             perPage: 1,
-            arrows: false,
-            autoplay:true,
+            arrows: true,
             rewindByDrag:true,
-            interval:5000,
-            speed:6000,
             pagination: false,
+            padding:{left:"20px"},
+            gap:"10px",
             type:"loop",
-            gap:"2px",
+           
             drag: "free",
            
           }}

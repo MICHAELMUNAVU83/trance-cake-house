@@ -54,18 +54,13 @@ function Fruity() {
         <Splide
           options={{
             perPage: 1,
-            arrows: false,
-            pauseOnHover:true,
-            pauseOnFocus:true,
-            autoplay:true,
-            pagination: false,
+            arrows: true,
             rewindByDrag:true,
-            interval:4000,
-            speed:5500,
+            pagination: false,
             type:"loop",
-            gap:"2px",
+            padding:{left:"20px"},
+            gap:"10px",
             drag: "free",
-           
           }}
         >
           {displayFruityCakes}

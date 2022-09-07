@@ -55,16 +55,12 @@ function Forests() {
         <Splide
           options={{
             perPage: 1,
-            arrows: false,
-            autoplay:true,
-            pauseOnHover:true,
-            pauseOnFocus:true,
+            arrows: true,
             rewindByDrag:true,
             pagination: false,
-            interval:5500,
-            speed:6000,
             type:"loop",
-            gap:"2px",
+            padding:{left:"20px"},
+            gap:"10px",
             drag: "free",
            
            
