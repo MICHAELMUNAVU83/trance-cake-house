@@ -180,9 +180,8 @@ li {
   border-radius: 20px;
   font-family: 'Roboto Serif', serif;
   font-weight: bolder;
-
   width: 20%;
-  margin-left: 40%;
+  margin-left: 45%;
   transition: all 600ms;
 }
 .add-to-cart-btn:hover {
@@ -205,7 +204,7 @@ form > div {
 }
 form .pick-size label {
   font-size: 1rem;
-  font-family: 'Dancing Script', cursive;
+   font-family: 'Comfortaa', cursive;
   color:red;
 }
 form .pick-size select {
@@ -214,7 +213,7 @@ form .pick-size select {
 }
 form .pick-number span {
   font-size: 1rem;
-  font-family: 'Dancing Script', cursive;
+   font-family: 'Comfortaa', cursive;
   color:red;
 }
 form .pick-number input {
@@ -223,7 +222,7 @@ form .pick-number input {
 }
 form .customer-name-input span {
   font-size: 1rem;
-  font-family: 'Dancing Script', cursive;
+   font-family: 'Comfortaa', cursive;
   color:red; 
 }
 form .customer-name-input input {
@@ -232,7 +231,7 @@ form .customer-name-input input {
 }
 form .customer-number-input span {
   font-size: 1rem;
-  font-family: 'Dancing Script', cursive;
+   font-family: 'Comfortaa', cursive;
   color:red;
 }
 form .customer-number-input input{
@@ -250,7 +249,7 @@ form .submit-btn-div button{
   font-size: 2rem;
   font-weight: bolder;
   border-radius: 20px;
-  width: 20%;
+  width: 30%;
   margin-left: 35%;
   transition: all 600ms;
   
@@ -277,19 +276,30 @@ h2 {
 .do-not-display {
   display: none;
 }
-.swal-wide {
-  width: 800px !important;
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.gallery .gallery-image{
+  width: 24rem;
+  height: 24rem;
+  border-radius: 20px;
+ 
 }
 @media only screen and (max-width: 740px) {
   .typed{
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .each-cake-div {
     width: 20rem;
+   
   }
   .each-cake-div .each-cake-image {
     width: 20rem;
+   
   }
   .order-first-div {
     display: flex;
@@ -301,7 +311,7 @@ h2 {
   }
   .add-to-cart-btn {
     width: 50%;
-    margin-left: 25%;
+    margin-left: 28%;
   }
   .select-size-number-text{
     font-size: 0.8rem;
@@ -312,7 +322,7 @@ h2 {
     margin-left: 1%;
   }
   form .pick-number input{
-    width: 40%;
+    width: 41%;
   }
   form .customer-name-input input{
     width: 52%;
@@ -333,5 +343,18 @@ h2 {
     padding: 10px;
     font-size: 1rem;
 
+  }
+  .gallery{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .gallery .gallery-image{
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 1%;
+   
   }
 }

@@ -35,6 +35,15 @@ function Navbar() {
             {" "}
             Cart <BsCartCheckFill /> 
           </NavLink>
+          <NavLink
+            to="/gallery"
+            onClick={handleClicked}
+            activeClassName="active"
+            className="nav-links"
+          >
+            {" "}
+           Gallery
+          </NavLink> 
 
           <NavLink
             className="nav-links"

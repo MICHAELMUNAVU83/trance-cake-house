@@ -59,10 +59,11 @@ function Chocolate() {
             perPage: 1,
             arrows: true,
             rewindByDrag:true,
-            padding: { left: "7%", right: "2%" },
+            padding:{left:"20px"},
+            gap:"10px",
             pagination: false,
             type:"loop",
-            gap:"2px",
+            
             drag: "free",
            
            
