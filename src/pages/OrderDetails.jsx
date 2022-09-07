@@ -44,6 +44,11 @@ function OrderDetails() {
   const price = Number(size) * Number(numberofCakes);
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+    
+
+  useEffect(() => {
     filteredUnique();
   });
 
