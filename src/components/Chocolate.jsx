@@ -3,6 +3,7 @@ import { cakes } from "../cakedatabase";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { layoutGenerator } from "react-break";
+import {Link} from "react-router-dom"
 
 function Chocolate() {
   const layout = layoutGenerator({
@@ -20,7 +21,10 @@ function Chocolate() {
         <SplideSlide key={cake.id}>
           <div className="each-cake-div" key={cake.id}>
             <img className="each-cake-image" src={cake.image} alt="cake" />
+            <Link  to={`/order/${cake.id}`}>
             <p className="each-cake-name">{cake.name}</p>
+            </Link>
+
             
           </div>
         </SplideSlide>
@@ -34,11 +38,13 @@ function Chocolate() {
           options={{
             perPage: 3,
             arrows: false,
-            pagination: true,
+            pauseOnHover:true,
+            pauseOnFocus:true,
+            pagination: false,
             autoplay:true,
-            speed:4000,
+            speed:5500,
             type:"loop",
-            interval:3000,
+            interval:4000,
             rewindByDrag:true,
             drag: "free",
             gap: "2rem",
@@ -54,11 +60,13 @@ function Chocolate() {
             arrows: false,
             autoplay:true,
             rewindByDrag:true,
-            interval:3000,
-            speed:4000,
+            pauseOnHover:true,
+            pauseOnFocus:true,
+            interval:4000,
+            speed:5500,
             type:"loop",
             gap:"2px",
-            pagination: true,
+            pagination: false,
             drag: "free",
            
            

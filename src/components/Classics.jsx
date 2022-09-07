@@ -3,6 +3,7 @@ import { cakes } from "../cakedatabase";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { layoutGenerator } from "react-break";
+import { Link } from "react-router-dom";
 
 function Classics() {
   const layout = layoutGenerator({
@@ -19,7 +20,11 @@ function Classics() {
         <SplideSlide key={cake.id}>
           <div className="each-cake-div" key={cake.id}>
             <img className="each-cake-image" src={cake.image} alt="cake" />
+            <Link  to={`/order/${cake.id}`}>
             <p className="each-cake-name">{cake.name}</p>
+            </Link>
+
+          
             
           </div>
         </SplideSlide>
@@ -33,11 +38,11 @@ function Classics() {
           options={{
             perPage: 3,
             arrows: false,
-            pagination: true,
             autoplay:true,
-            speed:4000,
+            speed:6000,
+            pagination: false,
             type:"loop",
-            interval:3000,
+            interval:5000,
             rewindByDrag:true,
             drag: "free",
             gap: "2rem",
@@ -53,11 +58,11 @@ function Classics() {
             arrows: false,
             autoplay:true,
             rewindByDrag:true,
-            interval:3000,
-            speed:4000,
+            interval:5000,
+            speed:6000,
+            pagination: false,
             type:"loop",
             gap:"2px",
-            pagination: true,
             drag: "free",
            
           }}
