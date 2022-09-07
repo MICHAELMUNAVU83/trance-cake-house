@@ -1,21 +1,4 @@
-.logo-image {
-  height: 100%;
-}
-nav {
-  display: flex;
-  flex-direction: row;
-  background: #f0a8c6;
-  opacity: 0.9;
-  justify-content: center;
-}
-nav > a {
-  margin-right: 4%;
-  margin-left: 4%;
-  margin-top: 2%;
-  font-size: 30px;
-  text-decoration: none;
-  color: #dc3d39;
-}
+
 .each-cake-div {
   border: 2px dashed #f0a8c6;
   width: 25rem;
@@ -29,6 +12,9 @@ nav > a {
   width: 25rem;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+}
+.each-cake-div a{
+  text-decoration: none;
 }
 
 .each-cake-div .each-cake-name {
@@ -238,7 +224,7 @@ h2 {
 }
 @media only screen and (max-width: 740px) {
   .logo-image {
-    height: 40%;
+    height: 20%;
   }
   nav {
     width: 100%;

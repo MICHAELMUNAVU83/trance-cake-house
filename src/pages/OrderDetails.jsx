@@ -73,7 +73,7 @@ function OrderDetails() {
         icon: "error",
         title: "Fill the form completely and resubmit",
         showConfirmButton: false,
-        timer: 2000,
+        timer: 5000,
         width: "400px",
       });
     }
