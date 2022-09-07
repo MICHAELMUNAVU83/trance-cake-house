@@ -57,6 +57,7 @@ function Fruity() {
             arrows: true,
             rewindByDrag:true,
             pagination: false,
+            padding: { left: "7%", right: "2%" },
             type:"loop",
             gap:"2px",
             drag: "free",

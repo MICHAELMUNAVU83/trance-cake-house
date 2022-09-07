@@ -241,7 +241,7 @@ function OrderDetails() {
           </div>
           <div className="submit-btn-div">
             <button type="submit" onClick={postCheckout}>
-              Submit
+             ORDER NOW
             </button>
           </div>
         </form>
