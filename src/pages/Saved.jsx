@@ -30,6 +30,9 @@ function Saved() {
           <div className="each-ordered-cake-div" key={cake.id}>
             <img className="each-cake-image" src={cake.image} alt="cake" />
             <p className="each-cake-name">{cake.name}</p>
+            <Link  to={`/order/${cake.id}`}>
+            <p className="each-cake-name">see more</p>
+            </Link>
 
             <button
               onClick={() => {

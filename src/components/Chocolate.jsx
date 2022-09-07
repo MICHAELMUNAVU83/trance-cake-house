@@ -20,7 +20,7 @@ function Chocolate() {
       cake.type === "Chocolate" && (
         <SplideSlide key={cake.id}>
           <div className="each-cake-div" key={cake.id}>
-            <img className="each-cake-image" src={cake.image} alt="cake" />
+            <img className="each-cake-image" src={cake.more_images[1]} alt="cake" />
             <Link  to={`/order/${cake.id}`}>
             <p className="each-cake-name">{cake.name}</p>
             </Link>
@@ -57,17 +57,13 @@ function Chocolate() {
         <Splide
           options={{
             perPage: 1,
-            arrows: false,
-            autoplay:true,
+            arrows: true,
             rewindByDrag:true,
-            pauseOnHover:true,
-            pauseOnFocus:true,
-            interval:4000,
-            speed:5500,
+            pagination: false,
             type:"loop",
             gap:"2px",
-            pagination: false,
             drag: "free",
+           
            
            
           }}

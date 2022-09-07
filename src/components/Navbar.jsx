@@ -1,40 +1,52 @@
-import React, { useContext , useState } from "react";
+import React, {  useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BsCartCheckFill } from "react-icons/bs";
-import { FaTimes ,FaBars } from "react-icons/fa";
-import { RoomContext } from "../context";
+import { FaTimes, FaBars } from "react-icons/fa";
+import logos from "../images/logo1.png"
 import "../Navbar.css";
 function Navbar() {
-  const { filtered } = useContext(RoomContext);
-  const likesCount = filtered.length > 0 && <span>{filtered.length}</span>;
-  const [click, setClick] = useState(false)
-  const handleClicked = ()=>{
-    setClick(!click)
-  }
+  
+  const [click, setClick] = useState(false);
+  const handleClicked = () => {
+    setClick(!click);
+  };
   return (
     <nav className="navbar">
       <div className="nav-container">
         <NavLink className="nav-logo" to="/">
-          Home
+          <img src={logos} alt="logos" />
         </NavLink>
-        <div className={click? "nav-menu active ":  "nav-menu"}>
-          <NavLink className="nav-links" onClick={handleClicked} activeClassName="active" to="/order">
+        <div className={click ? "nav-menu active " : "nav-menu"}>
+          <NavLink
+            className="nav-links"
+            onClick={handleClicked}
+            activeClassName="active"
+            to="/order"
+          >
             Order
           </NavLink>
 
-          <NavLink to="/saved"  onClick={handleClicked}  activeClassName="active" className="nav-links">
+          <NavLink
+            to="/saved"
+            onClick={handleClicked}
+            activeClassName="active"
+            className="nav-links"
+          >
             {" "}
-            <BsCartCheckFill /> {likesCount}
+            Cart <BsCartCheckFill /> 
           </NavLink>
 
-          <NavLink className="nav-links"  onClick={handleClicked}  activeClassName="active" to="/about">
+          <NavLink
+            className="nav-links"
+            onClick={handleClicked}
+            activeClassName="active"
+            to="/about"
+          >
             About
           </NavLink>
         </div>
         <div onClick={handleClicked} className="nav-icon">
-          <i >
-           {click ?  < FaTimes/> :  < FaBars/>}
-          </i>
+          <i>{click ? <FaTimes /> : <FaBars />}</i>
         </div>
       </div>
     </nav>

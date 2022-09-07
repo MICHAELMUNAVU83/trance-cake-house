@@ -1,15 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Bebas+Neue&family=Combo&family=Comfortaa&family=Dancing+Script:wght@500&family=Delius&family=Inter:wght@300&family=Kanit:wght@200&family=Krona+One&family=Merienda&family=Playfair+Display:ital@1&family=Roboto+Serif:opsz,wght@8..144,600&display=swap');
 
 .each-cake-div {
   border: 2px dashed #f0a8c6;
-  width: 25rem;
+  width: 23rem;
   padding-bottom: 0.5rem;
   margin: 2%;
   border-radius: 20px;
 }
+.typed{
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  display: flex;
+  color: red;
+  justify-content: center;
+
+}
+.typed .cakes-should-be{
+  font-family: 'Bebas Neue', cursive;
+  color: #f0a8c6;
+  margin-right: 1%;
+}
 
 .each-cake-div .each-cake-image {
   height: 20rem;
-  width: 25rem;
+  width: 23rem;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -19,10 +33,11 @@
 
 .each-cake-div .each-cake-name {
   display: flex;
+  font-family: 'Playfair Display', serif;
   background-color: red;
   color: white;
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 25px;
   border-radius: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -77,6 +92,7 @@
   font-size: 2rem;
   display: flex;
   justify-content: center;
+  font-family: 'Playfair Display', serif;
   color: red;
   font-weight: bolder;
   text-decoration: none;
@@ -103,13 +119,13 @@ li {
   margin: 5%;
 }
 .order-details-image1 img {
-  height: 20rem;
-  width: 20rem;
+  height: 18rem;
+  width: 18rem;
   border-radius: 20px;
 }
 .order-details-image2 img {
-  height: 20rem;
-  width: 20rem;
+  height: 18rem;
+  width: 18rem;
   border-radius: 20px;
 }
 
@@ -119,21 +135,32 @@ li {
 .order-first-div .order-details-info .ordered-cake-title {
   display: flex;
   flex-direction: column;
+  color: #f0a8c6;
 }
 .order-first-div .order-details-info .ordered-cake-title > div .key-of-cake {
   color: red;
+  font-weight: bolder;
 }
 .order-first-div .order-details-info .ordered-cake-title > div .value-of-cake {
-  color: pink;
-  font-weight: bolder;
+ 
+  
+  color: #f0a8c6;
+  
 }
 
 .order-first-div .order-details-info .ordered-cake-prices h3 {
   text-decoration: underline;
+  font-weight: bolder;
   color: red;
+
 }
 .order-first-div .order-details-info .ordered-cake-prices ul > li {
-  color: pink;
+  
+  color: #f0a8c6;
+}
+.order-first-div .order-details-info .ordered-cake-prices ul > li >span {
+  
+  color: red;
 }
 
 .add-to-cart-btn {
@@ -211,6 +238,16 @@ form .submit-btn-div button{
 h2 {
   display: flex;
   justify-content: center;
+  font-family: 'Roboto Serif', serif;
+  color: red;
+  background-color: #f0a8c6;
+  font-size: 2rem;
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: 30%;
+  margin-left: 40%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .display-total {
@@ -223,15 +260,10 @@ h2 {
   width: 800px !important;
 }
 @media only screen and (max-width: 740px) {
-  .logo-image {
-    height: 20%;
+  .typed{
+    font-size: 1.5rem;
   }
-  nav {
-    width: 100%;
-  }
-  nav > a {
-    font-size: 10px;
-  }
+
   .each-cake-div {
     width: 20rem;
   }
@@ -270,6 +302,12 @@ h2 {
   form .submit-btn-div button{
     width: 70%;
     margin-left: 15%;
+
+  }
+  h2{
+    width: 60%;
+    margin-left: 20%;
+    font-size: 1rem;
 
   }
 }
