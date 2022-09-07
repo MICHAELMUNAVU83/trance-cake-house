@@ -220,13 +220,13 @@ function OrderDetails() {
           </div>
           <div className="customer-name-input">
             <span>Input your Name : </span>
-            <input value={nameOfCustomer} onChange={(e)=>{
+            <input placeholder="Your name ..." value={nameOfCustomer} onChange={(e)=>{
               setNameOfCustomer(e.target.value)
             }} name="Name_of_customer" type="name" required />
           </div>
           <div className="customer-number-input">
             <span>Input your number: </span>
-            <input value={numberOfCustomer} onChange={(e)=>{
+            <input placeholder="Your number ..." value={numberOfCustomer} onChange={(e)=>{
               setNumberOfCustomer(e.target.value)
             }} name="Number_of_customer" type="number" required />
           </div>
