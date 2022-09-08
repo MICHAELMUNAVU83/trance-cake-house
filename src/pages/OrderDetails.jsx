@@ -72,7 +72,7 @@ function OrderDetails() {
       
       toast.success('Your request was received , we will reach out in a few to confirm your order ', {
         position: "top-center",
-        autoClose: 5000,
+        autoClose: 7000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
