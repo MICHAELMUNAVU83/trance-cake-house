@@ -305,6 +305,10 @@ h2 {
 .display-total {
   margin-bottom: 5%;
   color: red;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "Comfortaa", cursive;
 }
 .do-not-display {
   display: none;
@@ -343,12 +347,14 @@ footer .links-to-cakes a {
 }
 footer .social-media-icons{
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  flex-direction: column;
+ font-size: 1rem;
 }
 footer .social-media-icons a{
  color: red;
- font-size: 2rem;
+ font-size: 1.5rem;
+ font-family: 'Delius', cursive;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 740px) {
@@ -368,11 +374,17 @@ footer .social-media-icons a{
   .flavour-select select {
     height: 1.5rem;
   }
+  .all-cakes-order-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
   .each-cake-div {
-    width: 20rem;
+    width: 19rem;
   }
   .each-cake-div .each-cake-image {
-    width: 20rem;
+    width: 19rem;
   }
   .order-first-div {
     display: flex;
@@ -414,6 +426,15 @@ footer .social-media-icons a{
     padding: 10px;
     font-size: 1rem;
   }
+  footer{
+    gap: 1rem;
+  }
+  footer .links-to-cakes a{
+    font-size: 1rem;
+  }
+  footer .social-media-icons a{
+    font-size: 1rem ;
+  }
   .gallery {
     display: flex;
     flex-direction: column;
@@ -426,4 +447,10 @@ footer .social-media-icons a{
     height: 20rem;
     margin-bottom: 1%;
   }
+
+.display-total {
+  
+  font-size: 1.5rem;
+  
+}
 }

@@ -9,11 +9,13 @@ function Classics() {
   const layout = layoutGenerator({
     mobile: 0,
     phablet: 550,
-    tablet: 768,
+    tablet: 700,
     desktop: 992,
   });
   const OnMobile = layout.is("mobile");
   const OnDesktop = layout.is("desktop");
+  const OnTablet = layout.is("tablet");
+  const OnPhablet = layout.is("phablet")
   const displayClassicsCakes = cakes.map(
     (cake) =>
       cake.type === "classic" && (
@@ -51,6 +53,43 @@ function Classics() {
           {displayClassicsCakes}
         </Splide>
       </OnDesktop>
+      <OnTablet>
+        <Splide
+          options={{
+            perPage: 2,
+            arrows: false,
+            autoplay:true,
+            speed:6000,
+            pagination: false,
+            type:"loop",
+            interval:5000,
+            rewindByDrag:true,
+            drag: "free",
+            gap: "2rem",
+          }}
+        >
+          {displayClassicsCakes}
+        </Splide>
+      </OnTablet>
+      <OnPhablet>
+        <Splide
+          options={{
+            perPage: 1,
+            arrows: false,
+            autoplay:true,
+            speed:6000,
+            pagination: false,
+            type:"loop",
+            interval:5000,
+            rewindByDrag:true,
+            drag: "free",
+            gap: "2rem",
+          }}
+        >
+          {displayClassicsCakes}
+        </Splide>
+      </OnPhablet>
+
       <OnMobile>
         <Splide
           options={{

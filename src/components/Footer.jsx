@@ -5,7 +5,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi";
 import {
   AiOutlineInstagram,
-  AiOutlineTwitter,
+ 
 } from "react-icons/ai";
 import { HiOutlineMailOpen } from "react-icons/hi";
 function Footer() {
@@ -26,35 +26,29 @@ function Footer() {
           rel="noopener noreferrer"
           href="tel:0790841979"
         >
-          <FiPhoneCall/>  {" "}
+          <FiPhoneCall/> 0796230862  {" "}
         </a>
+       
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://twitter.com/MichaelTrance1"
+          href="https://instagram.com/didis_cakehouse?igshid=YmMyMTA2M2Y="
         >
-          <AiOutlineTwitter />{" "}
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://instagram.com/trance.07?igshid=YmMyMTA2M2Y="
-        >
-          <AiOutlineInstagram />{" "}
+          <AiOutlineInstagram /> didis_cakehouse {" "}
         </a>
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="mailto: michaelmunavu83@gmail.com"
         >
-          <HiOutlineMailOpen />{" "}
+          <HiOutlineMailOpen /> didiscakeshouse@gmail.com
         </a>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://wa.me/254740769596"
+          href="https://wa.me/254796230862 "
         >
-          <FaWhatsapp />{" "}
+          <FaWhatsapp />  0796230862 
         </a>
       </div>
     </footer>
