@@ -7,7 +7,7 @@ import Saved from "./pages/Saved";
 import Gallery from "./pages/Gallery";
 import { RoomProvider } from "./context"
 import Navbar from "./components/Navbar";
-import ClipLoader from "react-spinners/ClipLoader";
+import PacmanLoader  from "react-spinners/PacmanLoader";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {useState , useEffect} from "react"
 function App() {
@@ -16,7 +16,7 @@ function App() {
     setLoading(true)
     setTimeout(()=>{
 setLoading(false)
-    },8000)
+    },4000)
   }, [])
   return (
     <RoomProvider>
@@ -24,7 +24,11 @@ setLoading(false)
         <Navbar/>
         {
           loading ?
-          <ClipLoader color={'#f0a8c6'} loading={loading}  size={30} />
+          <div className="pacman">
+              <PacmanLoader  color={'#f0a8c6'} loading={loading}  size={50} />
+              
+            </div>
+        
           :
           <Routes>
           <Route path="/" element={  <Home />} />

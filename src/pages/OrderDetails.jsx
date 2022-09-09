@@ -82,7 +82,7 @@ function OrderDetails() {
     } else {
       toast.error(' Kindly Fill the whole form then place your order', {
         position: "top-center",
-        autoClose: 5000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -153,12 +153,12 @@ function OrderDetails() {
 
   const displayTotalPrice =
     totalPrice !== "" &&
-    size !== "" &&
+    size !== "" && numberOfCustomer !== "" && nameOfCustomer!=="" &&
     cakes.map(
       (cake) =>
         cake.id === Number(params.id) && (
           <div className="display-total" key={cake.id}>
-            The total amount payable for {numberofCakes} {cake.name} cake(s) is{" "}
+            The total amount payable for {numberofCakes} {kilo} {cake.name} cake(s) is{" "}
             {totalPrice.toLocaleString()} Ksh
           </div>
         )
