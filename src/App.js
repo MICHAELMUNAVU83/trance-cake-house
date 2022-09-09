@@ -7,13 +7,26 @@ import Saved from "./pages/Saved";
 import Gallery from "./pages/Gallery";
 import { RoomProvider } from "./context"
 import Navbar from "./components/Navbar";
+import ClipLoader from "react-spinners/ClipLoader";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {useState , useEffect} from "react"
 function App() {
+  const [loading , setLoading]= useState(false)
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(()=>{
+setLoading(false)
+    },8000)
+  }, [])
   return (
     <RoomProvider>
       <Router>
         <Navbar/>
-        <Routes>
+        {
+          loading ?
+          <ClipLoader color={'#f0a8c6'} loading={loading}  size={30} />
+          :
+          <Routes>
           <Route path="/" element={  <Home />} />
           <Route path="/about" element={  <About />} />
           <Route path="/order" element={  <Order />} />
@@ -23,6 +36,9 @@ function App() {
           
 
         </Routes>
+
+        }
+       
         
       </Router>
 

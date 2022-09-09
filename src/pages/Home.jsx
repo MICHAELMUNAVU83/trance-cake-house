@@ -3,6 +3,7 @@ import Classics from "../components/Classics";
 import Chocolate from "../components/Chocolate";
 import Forests from "../components/Forests";
 import Fruity from "../components/Fruity";
+import Footer from "../components/Footer";
 import Typed from "react-typed";
 function Home() {
   const cakesTyped = (
@@ -12,8 +13,8 @@ function Home() {
       <span className="tasty-delete">
         <Typed
           strings={["tasty", "sweet", "From Didis cake House"]}
-          typeSpeed={40}
-          backSpeed={50}
+          typeSpeed={60}
+          backSpeed={80}
           loop
         ></Typed>
       </span>
@@ -28,6 +29,7 @@ function Home() {
         <Chocolate />
         <Fruity />
       </div>
+      <Footer/>
     </div>
   );
 }

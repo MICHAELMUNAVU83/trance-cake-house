@@ -325,9 +325,15 @@ h2 {
   border-radius: 20px;
  
 } 
-.swal-wide {
-  width: 20rem !important;
+footer{
+  background-color: #f0a8c6;
+  margin-top: 2%;
+  height: 6rem;
+}
+footer a{
+  text-decoration: none;
   color: red;
+  font-size: 1.5rem;
 }
 @media only screen and (max-width: 740px) {
   .no-cakes{
