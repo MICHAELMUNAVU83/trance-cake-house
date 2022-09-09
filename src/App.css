@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo&family=Bebas+Neue&family=Combo&family=Comfortaa&family=Dancing+Script:wght@500&family=Delius&family=Inter:wght@300&family=Kanit:wght@200&family=Krona+One&family=Merienda&family=Playfair+Display:ital@1&family=Roboto+Serif:opsz,wght@8..144,600&display=swap');
-
+.pacman{
+  display: flex;
+  justify-content: center;
+}
 .no-cakes{
   display: flex;
   color: red;
@@ -309,6 +312,7 @@ h2 {
 
 .display-total {
   margin-bottom: 5%;
+  color: red;
 }
 .do-not-display {
   display: none;
@@ -325,9 +329,15 @@ h2 {
   border-radius: 20px;
  
 } 
-.swal-wide {
-  width: 20rem !important;
+footer{
+  background-color: #f0a8c6;
+  margin-top: 2%;
+  height: 6rem;
+}
+footer a{
+  text-decoration: none;
   color: red;
+  font-size: 1.5rem;
 }
 @media only screen and (max-width: 740px) {
   .no-cakes{

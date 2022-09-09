@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { Link } from "react-router-dom";
 import { cakes } from "../cakedatabase";
 
 function Order() {
   const [flavor, setFlavor] = useState("");
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+    
   const flavorSelector = (
     <div className="flavour-select">
       <span>
