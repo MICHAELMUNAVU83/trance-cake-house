@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Bebas+Neue&family=Combo&family=Comfortaa&family=Dancing+Script:wght@500&family=Delius&family=Inter:wght@300&family=Kanit:wght@200&family=Krona+One&family=Merienda&family=Playfair+Display:ital@1&family=Roboto+Serif:opsz,wght@8..144,600&display=swap');
-.pacman{
+@import url("https://fonts.googleapis.com/css2?family=Arimo&family=Bebas+Neue&family=Combo&family=Comfortaa&family=Dancing+Script:wght@500&family=Delius&family=Inter:wght@300&family=Kanit:wght@200&family=Krona+One&family=Merienda&family=Playfair+Display:ital@1&family=Roboto+Serif:opsz,wght@8..144,600&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+.pacman {
   display: flex;
   justify-content: center;
 }
-.no-cakes{
+.no-cakes {
   display: flex;
   color: red;
   flex-direction: column;
@@ -11,12 +16,11 @@
   width: 30%;
   margin-left: 33%;
   background-color: #f0a8c6;
-  font-family: 'Arimo', sans-serif;
+  font-family: "Arimo", sans-serif;
   padding: 40px;
   border-radius: 30px;
-  
 }
-.no-cakes a{
+.no-cakes a {
   text-align: center;
   text-decoration: none;
   color: white;
@@ -35,16 +39,15 @@
   margin: 2%;
   border-radius: 20px;
 }
-.typed{
-  font-family: 'Dancing Script', cursive;
+.typed {
+  font-family: "Dancing Script", cursive;
   font-size: 2rem;
   display: flex;
   color: red;
   justify-content: center;
-
 }
-.typed .cakes-should-be{
-  font-family: 'Playfair Display', serif;
+.typed .cakes-should-be {
+  font-family: "Playfair Display", serif;
   color: #f0a8c6;
   margin-right: 1%;
 }
@@ -55,13 +58,13 @@
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-.each-cake-div a{
+.each-cake-div a {
   text-decoration: none;
 }
 
 .each-cake-div .each-cake-name {
   display: flex;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   background-color: red;
   color: white;
   font-weight: bolder;
@@ -78,18 +81,16 @@
   justify-content: center;
   font-weight: bolder;
 }
-.flavour-select span{
+.flavour-select span {
   color: red;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.5rem;
-
 }
-.flavour-select select{
+.flavour-select select {
   height: 1.5rem;
 }
-.flavour-select select option{
-  font-family: 'Arimo', sans-serif;
-
+.flavour-select select option {
+  font-family: "Arimo", sans-serif;
 }
 .all-cakes-order-div {
   display: flex;
@@ -132,7 +133,7 @@
   font-size: 2rem;
   display: flex;
   justify-content: center;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: red;
   font-weight: bolder;
   text-decoration: none;
@@ -176,49 +177,42 @@ li {
   display: flex;
   flex-direction: column;
   color: #f0a8c6;
-  font-family: 'Arimo', sans-serif;
+  font-family: "Arimo", sans-serif;
 }
 .order-first-div .order-details-info .ordered-cake-title > div .key-of-cake {
   color: red;
   font-weight: bolder;
-  font-family: 'Playfair Display', serif;
-
+  font-family: "Playfair Display", serif;
 }
 .order-first-div .order-details-info .ordered-cake-title > div .value-of-cake {
- 
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
 
   color: #f0a8c6;
-  
 }
 
 .order-first-div .order-details-info .ordered-cake-prices h3 {
   text-decoration: underline;
   font-weight: bolder;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: red;
-
 }
 .order-first-div .order-details-info .ordered-cake-prices ul > li {
-  
   color: #f0a8c6;
-  
 }
-.order-first-div .order-details-info .ordered-cake-prices ul > li >span {
-  
+.order-first-div .order-details-info .ordered-cake-prices ul > li > span {
   color: red;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
 }
 
 .add-to-cart-btn {
   color: red;
-  background-color:#f0a8c6;
+  background-color: #f0a8c6;
   border: none;
   padding: 20px;
   font-size: 15px;
   font-weight: bolder;
   border-radius: 20px;
-  font-family: 'Roboto Serif', serif;
+  font-family: "Roboto Serif", serif;
   font-weight: bolder;
   width: 20%;
   margin-left: 45%;
@@ -232,7 +226,7 @@ li {
   font-size: 3rem;
   justify-content: center;
   text-decoration: underline;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 form {
   display: flex;
@@ -244,8 +238,8 @@ form > div {
 }
 form .pick-size label {
   font-size: 1rem;
-   font-family: 'Comfortaa', cursive;
-  color:red;
+  font-family: "Comfortaa", cursive;
+  color: red;
 }
 form .pick-size select {
   height: 2rem;
@@ -253,8 +247,8 @@ form .pick-size select {
 }
 form .pick-number span {
   font-size: 1rem;
-   font-family: 'Comfortaa', cursive;
-  color:red;
+  font-family: "Comfortaa", cursive;
+  color: red;
 }
 form .pick-number input {
   width: 16%;
@@ -262,8 +256,8 @@ form .pick-number input {
 }
 form .customer-name-input span {
   font-size: 1rem;
-   font-family: 'Comfortaa', cursive;
-  color:red; 
+  font-family: "Comfortaa", cursive;
+  color: red;
 }
 form .customer-name-input input {
   width: 20%;
@@ -271,34 +265,32 @@ form .customer-name-input input {
 }
 form .customer-number-input span {
   font-size: 1rem;
-   font-family: 'Comfortaa', cursive;
-  color:red;
+  font-family: "Comfortaa", cursive;
+  color: red;
 }
-form .customer-number-input input{
+form .customer-number-input input {
   width: 19%;
   height: 2rem;
- 
 }
-form .submit-btn-div button{
+form .submit-btn-div button {
   background-color: #f0a8c6;
   color: red;
   border: none;
   padding: 20px;
   font-weight: bolder;
-  font-family: 'Roboto Serif', serif;
+  font-family: "Roboto Serif", serif;
   font-size: 2rem;
   font-weight: bolder;
   border-radius: 20px;
   width: 30%;
   margin-left: 35%;
   transition: all 600ms;
-  
 }
 
 h2 {
   display: flex;
   justify-content: center;
-  font-family: 'Roboto Serif', serif;
+  font-family: "Roboto Serif", serif;
   color: red;
   background-color: #f0a8c6;
   font-size: 2rem;
@@ -313,58 +305,86 @@ h2 {
 .display-total {
   margin-bottom: 5%;
   color: red;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "Comfortaa", cursive;
 }
 .do-not-display {
   display: none;
 }
-.gallery{
+.gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
 }
-.gallery .gallery-image{
+.gallery .gallery-image {
   width: 24rem;
   height: 24rem;
   border-radius: 20px;
- 
-} 
-footer{
+}
+footer {
   background-color: #f0a8c6;
   margin-top: 2%;
-  height: 6rem;
+  opacity: 0.9;
+  padding-bottom: 1rem;
+  display: flex;
+  font-family: 'Delius', cursive;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
 }
-footer a{
-  text-decoration: none;
+footer .links-to-cakes {
+  display: flex;
+  flex-direction: column;
+}
+footer .links-to-cakes a {
   color: red;
+  text-decoration: none;
   font-size: 1.5rem;
 }
+footer .social-media-icons{
+  display: flex;
+  flex-direction: column;
+ font-size: 1rem;
+}
+footer .social-media-icons a{
+ color: red;
+ font-size: 1.5rem;
+ font-family: 'Delius', cursive;
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 740px) {
-  .no-cakes{
+  .no-cakes {
     width: 70%;
     margin-left: 5%;
   }
-  .no-cakes a{
+  .no-cakes a {
     font-size: 1rem;
   }
-  .typed{
+  .typed {
     font-size: 1.2rem;
   }
-  .flavour-select span{
-    
+  .flavour-select span {
     font-size: 1rem;
-  
   }
-  .flavour-select select{
+  .flavour-select select {
     height: 1.5rem;
   }
+  .all-cakes-order-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
   .each-cake-div {
-    width: 20rem;
-   
+    width: 19rem;
   }
   .each-cake-div .each-cake-image {
-    width: 20rem;
-   
+    width: 19rem;
   }
   .order-first-div {
     display: flex;
@@ -378,48 +398,59 @@ footer a{
     width: 50%;
     margin-left: 28%;
   }
-  .select-size-number-text{
+  .select-size-number-text {
     font-size: 0.8rem;
-   
   }
-  form .pick-size select{
+  form .pick-size select {
     width: 65%;
     margin-left: 1%;
   }
-  form .pick-number input{
+  form .pick-number input {
     width: 30%;
   }
-  form .customer-name-input input{
+  form .customer-name-input input {
     width: 40%;
   }
-  form .customer-number-input input  {
+  form .customer-number-input input {
     width: 40%;
   }
-  form .submit-btn-div button{
+  form .submit-btn-div button {
     width: 50%;
     margin-left: 25%;
     font-size: 1rem;
-
   }
-  h2{
+  h2 {
     width: 70%;
     margin-top: 2%;
     margin-left: 15%;
     padding: 10px;
     font-size: 1rem;
-
   }
-  .gallery{
+  footer{
+    gap: 1rem;
+  }
+  footer .links-to-cakes a{
+    font-size: 1rem;
+  }
+  footer .social-media-icons a{
+    font-size: 1rem ;
+  }
+  .gallery {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
   }
-  .gallery .gallery-image{
+  .gallery .gallery-image {
     width: 20rem;
     height: 20rem;
     margin-bottom: 1%;
-   
   }
+
+.display-total {
+  
+  font-size: 1.5rem;
+  
+}
 }
