@@ -1,7 +1,7 @@
 import React from "react";
-import { MdCopyright } from "react-icons/md";
+
 import { FaWhatsapp } from "react-icons/fa";
-import { IoCallOutline } from "react-icons/io5";
+
 import {
   AiOutlineInstagram,
   AiOutlineTwitter,
