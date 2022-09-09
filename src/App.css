@@ -430,10 +430,10 @@ footer .social-media-icons a{
     gap: 1rem;
   }
   footer .links-to-cakes a{
-    font-size: 1rem;
+    font-size: 0.5rem;
   }
   footer .social-media-icons a{
-    font-size: 1rem ;
+    font-size: 0.5rem ;
   }
   .gallery {
     display: flex;
