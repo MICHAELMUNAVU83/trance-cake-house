@@ -29,8 +29,8 @@ function Forests() {
       )
   );
   return (
-    <div>
-      <h2>FORESTS CAKES</h2>
+    <div >
+      <h2 id="forests-cakes-div">FORESTS CAKES</h2>
       <OnDesktop>
         <Splide
           options={{

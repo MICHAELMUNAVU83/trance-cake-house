@@ -31,8 +31,8 @@ function Classics() {
       )
   );
   return (
-    <div>
-      <h2>CLASSIC CAKES</h2>
+    <div >
+      <h2 id="classic-cakes-div">CLASSIC CAKES</h2>
       <OnDesktop>
         <Splide
           options={{

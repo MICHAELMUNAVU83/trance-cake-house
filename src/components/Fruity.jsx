@@ -28,8 +28,8 @@ function Fruity() {
       )
   );
   return (
-    <div>
-      <h2>FRUITY CAKES</h2>
+    <div >
+      <h2 id="fruity-cakes-div">FRUITY CAKES</h2>
       <OnDesktop>
         <Splide
           options={{

@@ -32,7 +32,7 @@ function Chocolate() {
   );
   return (
     <div>
-      <h2>CHOCOLATE CAKES</h2>
+      <h2 id="chocolate-cakes-div">CHOCOLATE CAKES</h2>
       <OnDesktop>
         <Splide
           options={{
