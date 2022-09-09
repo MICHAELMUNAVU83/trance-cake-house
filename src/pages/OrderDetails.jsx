@@ -222,7 +222,7 @@ function OrderDetails() {
             </select>
           </div>
           <div className="pick-number">
-            <span>Select number of cakes : </span>
+            <span>Input number of cakes : </span>
             <input
               value={numberofCakes}
               type="number"
