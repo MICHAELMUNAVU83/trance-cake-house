@@ -3,10 +3,7 @@ import logos from "../images/logo1.png";
 
 import { FaWhatsapp } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi";
-import {
-  AiOutlineInstagram,
- 
-} from "react-icons/ai";
+import { AiOutlineInstagram } from "react-icons/ai";
 import { HiOutlineMailOpen } from "react-icons/hi";
 function Footer() {
   return (
@@ -21,20 +18,16 @@ function Footer() {
         <a href="#forests-cakes-div">Forest Cakes</a>
       </div>
       <div className="social-media-icons">
-        <a
-          
-          rel="noopener noreferrer"
-          href="tel:0790841979"
-        >
-          <FiPhoneCall/> 0796230862  {" "}
+        <a rel="noopener noreferrer" href="tel:0796230862">
+          <FiPhoneCall /> 0796230862{" "}
         </a>
-       
+
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://instagram.com/didis_cakehouse?igshid=YmMyMTA2M2Y="
         >
-          <AiOutlineInstagram /> didis_cakehouse {" "}
+          <AiOutlineInstagram /> didis_cakehouse{" "}
         </a>
         <a
           target="_blank"
@@ -48,7 +41,7 @@ function Footer() {
           rel="noopener noreferrer"
           href="https://wa.me/254796230862 "
         >
-          <FaWhatsapp />  0796230862 
+          <FaWhatsapp /> 0796230862
         </a>
       </div>
     </footer>
