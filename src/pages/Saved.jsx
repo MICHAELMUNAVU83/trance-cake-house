@@ -11,7 +11,7 @@ function Saved() {
 
   useEffect(() => {
     filteredUnique();
-  });
+  },[filteredUnique]);
 
   if (filtered.length === 0) {
     return (
