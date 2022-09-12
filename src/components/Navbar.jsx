@@ -2,7 +2,7 @@ import React, {  useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BsCartCheckFill } from "react-icons/bs";
 import { FaTimes, FaBars } from "react-icons/fa";
-import logos from "../images/logo1.png"
+import logos from "../images/logo2.png"
 import "../Navbar.css";
 function Navbar() {
   
