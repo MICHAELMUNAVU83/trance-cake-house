@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Comfortaa&family=Delius&family=Inter:wght@300&family=Kanit:wght@200&family=Krona+One&family=Merienda&display=swap');
+nav{
+    display: flex;
+    background-color:  #f0a8c6;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    font-family: 'Delius', cursive;
+    font-size: 2rem;
+    margin-bottom: 1.5%;
+}
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    max-width: 1500px;
+
+}
+
+.nav-logo{
+    color: red;
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+   
+}
+.nav-menu{
+    display: flex;
+    text-align: center;
+    margin-right: 2rem;
+    
+}
+.nav-links{
+    color: red;
+    padding: 0.5rem 1rem;
+    height: 100%;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    line-height: 40px;
+    margin-right: 1rem;
+}
+.nav-links::after{
+    content: "";
+    display: flex;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition:  width 0.7s ease , background-color 0.5s ease ;
+}
+.nav-links:hover::after{
+    width: 100%;
+    background: red;
+
+}
+.nav-menu .active{
+    color: red;
+   
+    
+}
+.nav-icon{
+    color: red;
+    display: none;
+}
+@media screen  and (max-width :740px ) {
+    
+    .nav-menu{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        width: 100%;
+        left: -110%;
+        opacity: 1;
+        transition: all .5s ease-in-out;
+        
+    }
+    .nav-menu.active{
+        background: #f0a8c6;
+        left: 0px;
+        opacity: 1;
+        transition: all .5s ease-in-out;
+        z-index: 1;
+    }
+    .nav-links{
+        color: red;
+    }
+    .nav-icon{
+        display: block;
+        margin-right: 2%;
+      cursor: pointer;
+        
+    }
+    
+    .nav-icon i{
+        font-size: 1.5rem;
+      
+    }
+}
