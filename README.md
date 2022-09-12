@@ -1,4 +1,4 @@
-![news-today-image](https://user-images.githubusercontent.com/86654131/187967240-3d223da3-d33f-490d-81ee-5c605071dc9c.png)
+![Project Image](https://user-images.githubusercontent.com/86654131/189727627-6cbd71d7-e9b5-4569-952a-1a463d855124.png)
 
 # Project Name
 
