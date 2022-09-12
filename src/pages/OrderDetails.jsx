@@ -19,10 +19,10 @@ function OrderDetails() {
 
     emailjs
       .sendForm(
-        "service_rukfb2r",
-        "template_fk7qyuc",
+        "service_8nuxsw3",
+        "template_4ebr03g",
         form.current,
-        "1efSCjv514Ev3JGr9"
+        "6M-rV1iiaVqa5DANh"
       )
       .then(
         (result) => {
