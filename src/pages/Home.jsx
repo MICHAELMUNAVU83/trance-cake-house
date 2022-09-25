@@ -12,7 +12,7 @@ function Home() {
       <span>{"    "}</span>
       <span className="tasty-delete">
         <Typed
-          strings={["tasty", "sweet", "From Didis cake House"]}
+          strings={["tasty", "sweet", "From Trance cake House"]}
           typeSpeed={60}
           backSpeed={80}
           loop

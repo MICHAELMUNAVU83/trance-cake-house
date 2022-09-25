@@ -59,6 +59,10 @@ import vanilla from "./images/vanilla.jpeg";
 import vanilla2 from "./images/vanilla2.jpg";
 import white_forest1 from "./images/white_forest1.jpeg";
 import white_forest2 from "./images/white_forest2.jpeg";
+import  one from "./images/1.png";
+import  two from "./images/2.png";
+import  three from "./images/3.png";
+
 
 
 export const cakes = [
@@ -395,3 +399,4 @@ export const extra_images = [
 ];
 export const logos = [logo1];
 export const background_images = [background1, background2, background3];
+export const slideImages = [ one, two, three]
