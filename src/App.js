@@ -10,6 +10,14 @@ import Navbar from "./components/Navbar";
 import PacmanLoader from "react-spinners/PacmanLoader";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+navigator.serviceWorker
+  .register("/serviceWorker.js")
+  .then(() => {
+    console.log("Service Worker Registered");
+  })
+  .catch(() => {
+    console.log("Service Worker Registration Failed");
+  });
 function App() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {

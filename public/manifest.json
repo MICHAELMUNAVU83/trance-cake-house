@@ -3,17 +3,28 @@
   "name": "Trance Cake House",
   "icons": [
     {
-      "src": "logo2.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": " logo196.png",
+      "sizes": "196x196",
+      "purpose": "any maskable",
+      "type": "image/png"
     },
     {
-      "src": "logo2.png",
+      "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo2.png",
+      "src": "logo256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "logo384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
