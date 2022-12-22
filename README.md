@@ -1,4 +1,3 @@
-![Screenshot from 2022-12-22 07-53-49](https://user-images.githubusercontent.com/86654131/209059713-d697a3c4-39a5-4e79-be62-a20e9b01c024.png)
 
 
 # Project Name
