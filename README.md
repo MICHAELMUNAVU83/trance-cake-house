@@ -1,8 +1,10 @@
-![Project Image](https://user-images.githubusercontent.com/86654131/189727627-6cbd71d7-e9b5-4569-952a-1a463d855124.png)
+![Screenshot from 2022-12-22 07-53-49](https://user-images.githubusercontent.com/86654131/209059713-d697a3c4-39a5-4e79-be62-a20e9b01c024.png)
+
 
 # Project Name
 
 TRANCE CAKE HOUSE
+
 
 # DESCRIPTION
 This is a fully functional and responsive website that allows one to order cakes and the owner gets the customer data via email
