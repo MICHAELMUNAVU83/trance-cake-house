@@ -1,25 +1,27 @@
 import React, { useContext, useEffect } from "react";
 import { RoomContext } from "../context";
-import { Link } from "react-router-dom";
+import { Link  } from "react-router-dom";
+import { FaRegHandPointDown } from 'react-icons/fa';
 
 function Saved() {
+  
   const { removeFromArray } = useContext(RoomContext);
   const { filteredUnique } = useContext(RoomContext);
-  const { filtered } = useContext(RoomContext);  
+  const { filtered } = useContext(RoomContext);
+
   useEffect(() => {
     filteredUnique();
-    // eslint-disable-next-line
-  });
+  },[filteredUnique]);
 
   if (filtered.length === 0) {
     return (
-      <div key="no-cakes">
-        <div>
+      <div className="no-cakes" key="no-cakes">
+        
           <h3>
-            NO CAKES SAVED YET..HAVE A LOOK AT OUR AMAZNG CAKES AND SAVE A FEW
+            NO CAKES SAVED YET..HAVE A LOOK AT OUR AMAZNG CAKES AND SAVE A FEW < FaRegHandPointDown/>
           </h3>
-        </div>
-        <Link to="/order"> Our amazing cakes</Link>
+       
+        <Link to="/order">ALL CAKES</Link>
       </div>
     );
   } else {
@@ -36,7 +38,6 @@ function Saved() {
               }}
             >
               Remove From Cart
-
             </button>
           </div>
         ))}

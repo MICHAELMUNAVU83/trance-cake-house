@@ -1,221 +1,281 @@
-import React, { useState, useContext , useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useState, useContext, useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
 import { cakes } from "../cakedatabase";
 import { RoomContext } from "../context";
+import emailjs from "@emailjs/browser";
+import { toast, ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
+import { GiCakeSlice } from 'react-icons/gi';
+import { HiOutlineCake } from 'react-icons/hi';
+import {TbCake} from 'react-icons/tb';
+import { GiStairsCake } from 'react-icons/gi';
+import { SiCakephp } from 'react-icons/si';
 
 function OrderDetails() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_8nuxsw3",
+        "template_4ebr03g",
+        form.current,
+        "6M-rV1iiaVqa5DANh"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   const params = useParams();
   const { addCart } = useContext(RoomContext);
-  const { filteredUnique } = useContext(RoomContext);
-  const [customerNumber , SetCustomerNumber]= useState("")
-  const [size, setSize] = useState("");
-  const addToCartEvent =(cake)=>{
-    addCart(cake)
-   
-  }
+  const [kilo, setKilo] = useState("");
   const [totalPrice, setTotalPrice] = useState("");
- 
-  useEffect(()=>{
-    filteredUnique()
-   
-  })
-
   const [numberofCakes, setNumberofCakes] = useState("");
-  const price = Number(size) * Number(numberofCakes);
- 
-  const selectSize = (e) => {
-    setSize(e.target.value);
+  const [size, setSize] = useState("");
+  const [nameOfCustomer , setNameOfCustomer] = useState("")
+  const [numberOfCustomer , setNumberOfCustomer] = useState("")
+
+  const addToCartEvent = (cake) => {
+    addCart(cake);
+    toast.success('Added to Cart!', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
   };
+
+  const price = Number(size) * Number(numberofCakes);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+    
+
+
   const selectCakeNumber = (e) => {
     setNumberofCakes(e.target.value);
   };
   const postCheckout = () => {
-    if(size==="" && numberofCakes==="" ){
-      alert("please select a size and number of cakes you want")
+    setTotalPrice(price);
+    if (size !== "" && numberofCakes !== "" && numberOfCustomer!=="" && nameOfCustomer!=="") {
+      
+      toast.success('Your request was received , we will reach out in a few to confirm your order ', {
+        position: "top-center",
+        autoClose: 7000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    } else {
+      toast.error(' Kindly Fill the whole form then place your order', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    
     }
-    else if (size==="" && numberofCakes!==""){
-      alert("please select the number  of cakes you want")
-    }
-    else if (size !== "" && numberofCakes===""){
-      alert("please select the size you want")
-    }
-    else{
-      setTotalPrice(price);
 
-    }
-  
+    // eslint-disable-next-line
+    cakes.map((cake) => {
+      if (Number(size) === cake.half_kg) {
+        setKilo("half kg");
+      } else if (Number(size) === cake.one_kg) {
+        setKilo("one kg");
+      } else if (Number(size) === cake.two_kg) {
+        setKilo("Two kgs");
+      } else if (Number(size) === cake.three_kg) {
+        setKilo("three kgs");
+      } else if (Number(size) === cake.four_kg) {
+        setKilo("four kgs");
+      }
+    });
   };
 
-  const orderedCakeImage = cakes.map(
+  const orderedCakeImage1 = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
-        <div key={cake.id}>
-          <img
-            className="ordered-cake-image"
-            src={cake.image}
-            alt={cake.name}
-          />
-        </div>
+        <img key={cake.more_images[0]} src={cake.more_images[0]} alt={cake.name} />
+      )
+  );
+  const orderedCakeImage2 = cakes.map(
+    (cake) =>
+      cake.id === Number(params.id) && (
+        <img key={cake.more_images[1]} src={cake.more_images[1]} alt={cake.name} />
       )
   );
   const orderedCakeTitle = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
-        <div key={cake.id}>
-          <h3>Name :{cake.name}</h3>
-          <h3>Type : {cake.type}</h3>
+        <div className="ordered-cake-title" key={cake.type}>
+          <div>
+            <span className="key-of-cake">NAME :</span>{" "}
+            <span className="value-of-cake">{cake.name} </span>
+          </div>
+          <div>
+            <span className="key-of-cake">TYPE :</span>{" "}
+            <span className="value-of-cake">{cake.type} </span>
+          </div>
         </div>
       )
   );
   const orderedCakePrices = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
-        <div key={cake.id}>
+        <div className="ordered-cake-prices" key={cake.name}>
           <h3>Prices</h3>
           <ul>
-            <li> Half Kg :{cake.half_kg}</li>
-            <li> One Kg :{cake.one_kg}</li>
-            <li>Two kg: {cake.two_kg}</li>
-            <li> Three kg:{cake.three_kg}</li>
-            <li> Four Kg:{cake.four_kg}</li>
+            <li> <span> < GiCakeSlice/>  Half Kg :</span> {cake.half_kg.toLocaleString()}Ksh</li>
+            <li> <span>  < TbCake/>  One Kg :</span>{cake.one_kg.toLocaleString()} Ksh</li>
+            <li> <span> <SiCakephp/>  Two kg: </span>  {cake.two_kg.toLocaleString()} Ksh</li>
+            <li> <span> < HiOutlineCake/> Three kg: </span>  {cake.three_kg.toLocaleString()} Ksh</li>
+            <li>  <span> <GiStairsCake/> Four Kg: </span> {cake.four_kg.toLocaleString()} Ksh</li>
           </ul>
         </div>
       )
   );
-  // eslint-disable-next-line
-  const orderedCakeIngridients = cakes.map((cake) => {
-    if (cake.id === Number(params.id) && cake.eggs && cake.milk) {
-      return (
-        <div key={cake.id}>
-          <p>has eggs</p>
-          <p>has milk</p>
-        </div>
-      );
-    } else if (cake.id === Number(params.id) && !cake.eggs && cake.milk) {
-      return (
-        <div key={cake.id}>
-          <p>has no eggs</p>
-          <p>has milk</p>
-        </div>
-      );
-    } else if (cake.id === Number(params.id) && cake.eggs && !cake.milk) {
-      return (
-        <div key={cake.id}>
-          <p>has eggs</p>
-          <p>has no milk</p>
-        </div>
-      );
-    } else if (cake.id === Number(params.id) && !cake.eggs && !cake.milk) {
-      return (
-        <div key={cake.id}>
-          <p>has no eggs</p>
-          <p>has no milk</p>
-        </div>
-      );
-    }
-  });
-
-  const pickFlavour = cakes.map(
-    (cake) =>
-      cake.id === Number(params.id) && (
-        <div key={cake.id}>
-          <label htmlFor="size-selector">Select a size:</label>
-          <select
-            onChange={selectSize}
-            value={size}
-            name="size-selector"
-            id="size-selector"
-          >
-            <option value="">Select a size</option>
-            <option value={cake.half_kg}>
-              Half kg at {cake.half_kg.toLocaleString()} Ksh
-            </option>
-            <option value={cake.one_kg}>
-              One kg at {cake.one_kg.toLocaleString()} Ksh
-            </option>
-            <option value={cake.two_kg}>
-              Two kgs at {cake.two_kg.toLocaleString()} Ksh
-            </option>
-            <option value={cake.three_kg}>
-              Three kgs at {cake.three_kg.toLocaleString()} Ksh
-            </option>
-            <option value={cake.four_kg}>
-              Four kgs at {cake.four_kg.toLocaleString()} Ksh
-            </option>
-          </select>
-        </div>
-      )
-  );
-  const pickNumber = (
-    <div>
-      Select number of cakes{" "}
-      <input value={numberofCakes} type="number" onChange={selectCakeNumber} />
-    </div>
-  );
-  const checkoutButton = (
-    <div>
-      <button onClick={postCheckout}> Checkout</button>
-    </div>
-  );
 
   const displayTotalPrice =
     totalPrice !== "" &&
-    size !== "" &&
+    size !== "" && numberOfCustomer !== "" && nameOfCustomer!=="" &&
     cakes.map(
       (cake) =>
         cake.id === Number(params.id) && (
-          <div key={cake.id}>
-            The total amount payable for {numberofCakes} {cake.name} cake(s) is{" "}
+          <div className="display-total" key={cake.id}>
+            The total amount payable for {numberofCakes} {kilo} {cake.name} cake(s) is{" "}
             {totalPrice.toLocaleString()} Ksh
           </div>
         )
     );
-   
+
   const addToCartButton = cakes.map(
     (cake) =>
       cake.id === Number(params.id) && (
         <button
-          onClick={()=>{
-            addToCartEvent(cake)
+          className="add-to-cart-btn"
+          key={cake.eggs}
+          onClick={() => {
+            addToCartEvent(cake);
           }}
         >
-         ADD TO CART
+          ADD TO CART
         </button>
       )
   );
-  const customerForm = <div>
-    <input onChange={(e)=>{
-      SetCustomerNumber(e.target.value)
-    }} placeholder="enter your  number"  />
 
-    <button onClick={()=>{
-      sendToWhatsapp(customerNumber)
-    }} key="1">SEND ORDER</button>
+  const selectSizeAndNumberTitle = cakes.map(
+    (cake) =>
+      cake.id === Number(params.id) && (
+        <h3 className="select-size-number-text" key={cake.half_kg}>
+          FILL THE FORM BELOW TO COMPLETE YOUR ORDER
+        </h3>
+      )
+  );
 
-  </div>
-  const sendToWhatsapp = (orderDetails) => {
-    const whatsAppLink = `https://api.whatsapp.com/send?phone=254796230862&text=%20${orderDetails}`;
-    window.open(whatsAppLink, "_blank");
-  };
- 
+  const formData = cakes.map(
+    (cake) =>
+      cake.id === Number(params.id) && (
+        <form key={cake.id} ref={form} onSubmit={sendEmail}>
+          <div className="pick-size" key={cake.id}>
+            <label htmlFor="Price for each cake">Select a size:</label>
+            <select
+              required
+              onChange={(e) => {
+                setSize(e.target.value);
+              }}
+              value={size}
+              name="Price_for_each_cake"
+              id="size-selector"
+            >
+              <option value="">Select a size</option>
+              <option value={cake.half_kg}>
+                Half kg at {cake.half_kg.toLocaleString()} Ksh
+              </option>
+              <option value={cake.one_kg}>
+                One kg at {cake.one_kg.toLocaleString()} Ksh
+              </option>
+              <option value={cake.two_kg}>
+                Two kgs at {cake.two_kg.toLocaleString()} Ksh
+              </option>
+              <option value={cake.three_kg}>
+                Three kgs at {cake.three_kg.toLocaleString()} Ksh
+              </option>
+              <option value={cake.four_kg}>
+                Four kgs at {cake.four_kg.toLocaleString()} Ksh
+              </option>
+            </select>
+          </div>
+          <div className="pick-number">
+            <span>Input number of cakes : </span>
+            <input
+              value={numberofCakes}
+              type="number"
+              name="number_of_cakes"
+              placeholder="number of cakes"
+              onChange={selectCakeNumber}
+            />
+          </div>
+          <div className="customer-name-input">
+            <span>Input your Name : </span>
+            <input placeholder="Your name ..." value={nameOfCustomer} onChange={(e)=>{
+              setNameOfCustomer(e.target.value)
+            }} name="Name_of_customer" type="name" required />
+          </div>
+          <div className="customer-number-input">
+            <span>Input your number: </span>
+            <input placeholder="Your number ..." value={numberOfCustomer} onChange={(e)=>{
+              setNumberOfCustomer(e.target.value)
+            }} name="Number_of_customer" type="number" required />
+          </div>
+          <div className="do-not-display">
+            <input name="Cake_Name" value={cake.name} readOnly />
+            <input name="Size_Ordered" value={kilo} readOnly />
+            <input
+              name="Total_Price"
+              value={totalPrice.toLocaleString()}
+              readOnly
+            />
+          </div>
+          <div className="submit-btn-div">
+            <button type="submit" onClick={postCheckout}>
+             ORDER NOW
+            </button>
+          </div>
+        </form>
+      )
+  );
 
   return (
     <div>
-      <div className="order-details-div">
-        <Link to="/order">BACK BUTTON</Link>
-        <div className="order-details-image">{orderedCakeImage}</div>
+      <div className="order-first-div">
+        <div className="order-details-image1">{orderedCakeImage1}</div>
+        <div className="order-details-image2">{orderedCakeImage2}</div>
         <div className="order-details-info">
           {orderedCakeTitle}
           {orderedCakePrices}
-          {orderedCakeIngridients}
         </div>
       </div>
-      {pickFlavour}
-      {pickNumber}
-      {checkoutButton}
-      {displayTotalPrice}
       {addToCartButton}
-      {customerForm}
+      {selectSizeAndNumberTitle}
+      {formData}
+      {displayTotalPrice}
+      <ToastContainer/>
     </div>
   );
 }
